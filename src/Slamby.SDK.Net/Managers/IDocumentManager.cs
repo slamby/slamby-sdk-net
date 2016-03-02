@@ -14,7 +14,7 @@ namespace Slamby.SDK.Net.Managers
         Task<ClientResponse> CreateDocumentAsync(object document);
         Task<ClientResponse> UpdateDocumentAsync(string documentId, object document);
         Task<ClientResponse> DeleteDocumentAsync(string documentId);
-        Task<ClientResponse> CopyDocumentsToAsync(IEnumerable<string> documentIds, string targetDataSetName);
-        Task<ClientResponse> MoveDocumentsToAsync(IEnumerable<string> documentIds, string targetDataSetName);
+        Task<ClientResponse> CopyDocumentsToAsync(DocumentCopySettings settings);
+        Task<ClientResponse> MoveDocumentsToAsync(DocumentMoveSettings settings);
     }
 }
