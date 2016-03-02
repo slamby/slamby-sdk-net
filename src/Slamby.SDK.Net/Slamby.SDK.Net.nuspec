@@ -6,13 +6,12 @@
     <title>$title$</title>
     <authors>Slamby</authors>
     <owners>Slamby</owners>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <licenseUrl>https://github.com/slamby/slamby-sdk-net/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/slamby/slamby-sdk-net</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Slamby SDK Descripton</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <description>Slamby.SDK.Net for Slamby.API Service</description>
+    <releaseNotes></releaseNotes>
     <copyright>Copyright 2016</copyright>
-    <tags>Slamby SDK</tags>
+    <tags>Slamby SDK API Service</tags>
   </metadata>
 </package>
