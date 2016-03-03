@@ -20,7 +20,8 @@ namespace Slamby.SDK.Net.Managers
 
         public async Task<ClientResponse> CopyDocumentsToAsync(DocumentCopySettings settings)
         {
-            return await _client.SendAsync(System.Net.Http.HttpMethod.Post, settings, null, null, Headers);
+            var client = new ApiClient(_configuration, CopyEndpoint);
+            return await client.SendAsync(System.Net.Http.HttpMethod.Post, settings, null, null, Headers);
         }
 
         public async Task<ClientResponse> CreateDocumentAsync(object document)
@@ -57,7 +58,8 @@ namespace Slamby.SDK.Net.Managers
 
         public async Task<ClientResponse> MoveDocumentsToAsync(DocumentMoveSettings settings)
         {
-            return await _client.SendAsync(System.Net.Http.HttpMethod.Post, settings, null, null, Headers);
+            var client = new ApiClient(_configuration, MoveEndpoint);
+            return await client.SendAsync(System.Net.Http.HttpMethod.Post, settings, null, null, Headers);
         }
 
         public async Task<ClientResponse> UpdateDocumentAsync(string documentId, object document)
