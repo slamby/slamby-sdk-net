@@ -218,8 +218,12 @@ _Example:_
 
 ```
 var manager = new DocumentManager(configuration, "DATASET_NAME");
-var documentIds = new List<string> { "5", "6", "7", "8", "9" };
-var result = await manager.CopyDocumentsToAsync(documentIds, "TARGET_DATASET_NAME");
+var settings = new DocumentCopySettings()
+{
+    Ids = new List<string> { "5", "6", "7", "8", "9" },
+    TargetDataSetName = "TARGET_DATASET_NAME"
+};
+var result = await manager.CopyDocumentsToAsync(settings);
 ```	
 
 > **Tip:** You can use the `Documents/Sample` or the `Documents/Filter` methods to get document ids easily.
@@ -233,8 +237,12 @@ _Example:_
 
 ```
 var manager = new DocumentManager(configuration, "DATASET_NAME");
-var documentIds = new List<string> { "5", "6", "7", "8", "9" };
-var result = await manager.MoveDocumentsToAsync(documentIds, "TARGET_DATASET_NAME");
+var settings = new DocumentMoveSettings()
+{
+    Ids = new List<string> { "5", "6", "7", "8", "9" },
+    TargetDataSetName = "TARGET_DATASET_NAME"
+};
+var result = await manager.MoveDocumentsToAsync(settings);
 ```	
 
 > **Tip:** You can use the `Documents/Sample` or the `Documents/Filter` methods to get document ids easily.
