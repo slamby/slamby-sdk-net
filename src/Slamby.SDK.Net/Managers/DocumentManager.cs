@@ -10,15 +10,17 @@ namespace Slamby.SDK.Net.Managers
         private static readonly string Endpoint = "api/documents";
         private static readonly string FilterEndpoint = "api/documents/filter";
         private static readonly string SampleEndpoint = "api/documents/sample";
+        private static readonly string CopyEndpoint = "api/documents/copy";
+        private static readonly string MoveEndpoint = "api/documents/move";
         private readonly Dictionary<string, string> Headers = new Dictionary<string, string>();
 
         public DocumentManager(Configuration config, string dataSetName) : base(config, Endpoint) {
             Headers.Add(Constants.DataSetHeader, dataSetName);
         }
 
-        public async Task<ClientResponse> CopyDocumentsToAsync(IEnumerable<string> documentIds, string targetDataSetName)
+        public async Task<ClientResponse> CopyDocumentsToAsync(DocumentCopySettings settings)
         {
-            throw new NotImplementedException();
+            return await _client.SendAsync(System.Net.Http.HttpMethod.Post, settings, null, null, Headers);
         }
 
         public async Task<ClientResponse> CreateDocumentAsync(object document)
@@ -53,9 +55,9 @@ namespace Slamby.SDK.Net.Managers
             return await client.SendAsync<PaginatedList<object>>(System.Net.Http.HttpMethod.Post, filterSettings, null, null, Headers);
         }
 
-        public Task<ClientResponse> MoveDocumentsToAsync(IEnumerable<string> documentIds, string targetDataSetName)
+        public async Task<ClientResponse> MoveDocumentsToAsync(DocumentMoveSettings settings)
         {
-            throw new NotImplementedException();
+            return await _client.SendAsync(System.Net.Http.HttpMethod.Post, settings, null, null, Headers);
         }
 
         public async Task<ClientResponse> UpdateDocumentAsync(string documentId, object document)
