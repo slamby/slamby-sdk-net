@@ -56,7 +56,9 @@
     <Compile Include="Models\ClientResponse.cs" />
     <Compile Include="Models\DataSet.cs" />
     <Compile Include="Models\DataSetStats.cs" />
+    <Compile Include="Models\DocumentCopySettings.cs" />
     <Compile Include="Models\DocumentFilterSettings.cs" />
+    <Compile Include="Models\DocumentMoveSettings.cs" />
     <Compile Include="Models\DocumentSampleSettings.cs" />
     <Compile Include="Models\Enums\ClassifierStatusEnum.cs" />
     <Compile Include="Models\Enums\OrderDirectionEnum.cs" />
