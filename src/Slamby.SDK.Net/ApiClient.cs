@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Slamby.SDK.Net.Models;
 using Slamby.SDK.Net.Helpers;
+using Newtonsoft.Json.Converters;
 
 namespace Slamby.SDK.Net
 {
@@ -31,6 +32,9 @@ namespace Slamby.SDK.Net
         {
             ClientResponseWithObject<T> clientResponse = null;
             var loggingHandler = new LoggingHandler();
+            var jsonSerializerSettings = new JsonSerializerSettings();
+
+            jsonSerializerSettings.Converters.Add(new StringEnumConverter());
 
             using (var client = new HttpClient(loggingHandler))
             {
@@ -50,7 +54,7 @@ namespace Slamby.SDK.Net
                 ByteArrayContent content = null;
                 if (body != null)
                 {
-                    content = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");
+                    content = new StringContent(JsonConvert.SerializeObject(body, jsonSerializerSettings), Encoding.UTF8, "application/json");
                 }
                 else
                 {
@@ -94,14 +98,14 @@ namespace Slamby.SDK.Net
                 {
                     if (!string.IsNullOrEmpty(respString))
                     {
-                        clientResponse.ResponseObject = JsonConvert.DeserializeObject<T>(respString);
+                        clientResponse.ResponseObject = JsonConvert.DeserializeObject<T>(respString, jsonSerializerSettings);
                     }
                 }
                 else
                 {
                     if (!string.IsNullOrEmpty(respString))
                     {
-                        clientResponse.Errors = JsonConvert.DeserializeObject<ErrorsModel>(respString);
+                        clientResponse.Errors = JsonConvert.DeserializeObject<ErrorsModel>(respString, jsonSerializerSettings);
                     }
                 }
 

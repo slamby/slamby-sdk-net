@@ -8,10 +8,7 @@ namespace Slamby.SDK.Net.Models
     {
         public int Offset { get; set; }
         public int Limit { get; set; }
-
-        [JsonConverter(typeof(StringEnumConverter))]
         public OrderDirectionEnum OrderDirection { get; set; }
-
         public string OrderByField { get; set; }
     }
 }
