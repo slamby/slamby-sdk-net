@@ -6,13 +6,11 @@ namespace Slamby.SDK.Net.Models
     {
         public IEnumerable<string> Errors { get; set; }
 
-        public ErrorsModel()
+        public static ErrorsModel Create(string error)
         {
-        }
-
-        public ErrorsModel(string error)
-        {
-            Errors = new[] { error };
+            var errorsModel = new ErrorsModel();
+            errorsModel.Errors =  new[] { error };
+            return errorsModel;
         }
     }
 }
