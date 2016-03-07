@@ -1,6 +1,6 @@
 ﻿namespace Slamby.SDK.Net.Models.Enums
 {
-    public enum ClassifierStatusEnum
+    public enum ServiceStatusEnum
     {
         New,
         Prepared,

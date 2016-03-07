@@ -60,8 +60,9 @@
     <Compile Include="Models\DocumentFilterSettings.cs" />
     <Compile Include="Models\DocumentMoveSettings.cs" />
     <Compile Include="Models\DocumentSampleSettings.cs" />
-    <Compile Include="Models\Enums\ClassifierStatusEnum.cs" />
+    <Compile Include="Models\Enums\ServiceStatusEnum.cs" />
     <Compile Include="Models\Enums\OrderDirectionEnum.cs" />
+    <Compile Include="Models\Enums\ServiceTypeEnum.cs" />
     <Compile Include="Models\ErrorsModel.cs" />
     <Compile Include="Models\Pagination.cs" />
     <Compile Include="Models\PaginatedList.cs" />
