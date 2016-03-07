@@ -6,10 +6,10 @@ namespace Slamby.SDK.Net.Managers
 {
     public interface ITagManager
     {
-        Task<ClientResponseWithObject<IEnumerable<Tag>>> GetTagsAsync(string parentId = null, int? level = null);
-        Task<ClientResponseWithObject<Tag>> GetTagAsync(string tagId);
+        Task<ClientResponseWithObject<IEnumerable<Tag>>> GetTagsAsync(bool withDetails = false);
+        Task<ClientResponseWithObject<Tag>> GetTagAsync(string tagId, bool withDetails = false);
         Task<ClientResponse> CreateTagAsync(Tag tag);
         Task<ClientResponse> UpdateTagAsync(string tagId, Tag tag);
-        Task<ClientResponse> DeleteTagAsync(string tagId);
+        Task<ClientResponse> DeleteTagAsync(string tagId, bool force, bool cleanDocuments);
     }
 }
