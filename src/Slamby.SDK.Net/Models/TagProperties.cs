@@ -1,8 +1,10 @@
-﻿namespace Slamby.SDK.Net.Models
+﻿using System.Collections.Generic;
+
+namespace Slamby.SDK.Net.Models
 {
     public class TagProperties
     {
-        public string Path { get; set; }
+        public List<PathItem> Path { get; set; }
         public int Level { get; set; }
         public bool IsLeaf { get; set; }
         public int DocumentCount { get; set; }

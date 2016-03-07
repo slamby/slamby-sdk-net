@@ -65,6 +65,7 @@
     <Compile Include="Models\ErrorsModel.cs" />
     <Compile Include="Models\Pagination.cs" />
     <Compile Include="Models\PaginatedList.cs" />
+    <Compile Include="Models\PathItem.cs" />
     <Compile Include="Models\Services\ClassifierService.cs" />
     <Compile Include="Models\Services\ClassifierSettings.cs" />
     <Compile Include="Models\Services\Service.cs" />
