@@ -16,9 +16,9 @@ namespace Slamby.SDK.Net.Managers
             _configuration = config;
         }
 
-        public async Task<ClientResponse> CreateServiceAsync(Service service)
+        public async Task<ClientResponseWithObject<Service>> CreateServiceAsync(Service service)
         {
-            return await _client.SendAsync(System.Net.Http.HttpMethod.Post, service, null, null, Headers);
+            return await _client.SendAsync<Service>(System.Net.Http.HttpMethod.Post, service, null, null, Headers);
         }
 
         public async Task<ClientResponse> DeleteServiceAsync(string serviceId)
