@@ -31,9 +31,9 @@ namespace Slamby.SDK.Net.Managers
             return await _client.SendAsync<Service>(System.Net.Http.HttpMethod.Get, null, serviceId, null, Headers);
         }
 
-        public async Task<ClientResponseWithObject<Service>> GetServicesAsync()
+        public async Task<ClientResponseWithObject<IEnumerable<Service>>> GetServicesAsync()
         {
-            return await _client.SendAsync<Service>(System.Net.Http.HttpMethod.Get, null, null, null, Headers);
+            return await _client.SendAsync<IEnumerable<Service>>(System.Net.Http.HttpMethod.Get, null, null, null, Headers);
         }
 
         public async Task<ClientResponse> UpdateServiceAsync(string serviceId, Service service)

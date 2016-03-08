@@ -7,5 +7,7 @@
         public const string AuthorizationHeader = "Authorization";
 
         public const string AuthorizationMethodSlamby = "Slamby";
+
+        public const string ApiVersionHeader = "X-Api-Version";
     }
 }
