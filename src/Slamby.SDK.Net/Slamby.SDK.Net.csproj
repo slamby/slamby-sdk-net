@@ -51,7 +51,9 @@
     <Compile Include="Managers\DocumentManager.cs" />
     <Compile Include="Managers\IDataSetManager.cs" />
     <Compile Include="Managers\IDocumentManager.cs" />
+    <Compile Include="Managers\IServiceManager.cs" />
     <Compile Include="Managers\ITagManager.cs" />
+    <Compile Include="Managers\ServiceManager.cs" />
     <Compile Include="Managers\TagManager.cs" />
     <Compile Include="Models\ClientResponse.cs" />
     <Compile Include="Models\DataSet.cs" />
