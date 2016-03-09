@@ -75,7 +75,6 @@ namespace Slamby.SDK.Net
                 else if (method == HttpMethod.Delete)
                 {
                     responseMsg = await client.DeleteAsync(appendedUri);
-
                 }
                 else if (method == HttpMethod.Put)
                 {
@@ -108,6 +107,10 @@ namespace Slamby.SDK.Net
                         clientResponse.Errors = JsonConvert.DeserializeObject<ErrorsModel>(respString, jsonSerializerSettings);
                     }
                 }
+
+                clientResponse.ApiVersion = responseMsg.Headers.Where(header => string.Equals(header.Key, Constants.ApiVersionHeader, StringComparison.OrdinalIgnoreCase))
+                    .SelectMany(header => header.Value)
+                    .FirstOrDefault() ?? string.Empty;
 
                 return clientResponse;
             }
