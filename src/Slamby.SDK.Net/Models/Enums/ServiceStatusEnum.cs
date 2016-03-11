@@ -3,7 +3,8 @@
     public enum ServiceStatusEnum
     {
         New,
+        Busy,
         Prepared,
-        Ready
+        Active
     }
 }

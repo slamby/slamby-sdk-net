@@ -1,4 +1,5 @@
 ﻿using Slamby.SDK.Net.Models.Enums;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Slamby.SDK.Net.Models.Services
@@ -13,5 +14,7 @@ namespace Slamby.SDK.Net.Models.Services
         [Required]
         public ServiceTypeEnum Type { get; set; }
 
+        public List<string> ProcessIdList { get; set; }
+        public string ActualProcessId { get; set; }
     }
 }
