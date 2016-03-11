@@ -55,9 +55,11 @@
     <Compile Include="Managers\ITagManager.cs" />
     <Compile Include="Managers\ServiceManager.cs" />
     <Compile Include="Managers\TagManager.cs" />
+    <Compile Include="Models\BulkError.cs" />
     <Compile Include="Models\ClientResponse.cs" />
     <Compile Include="Models\DataSet.cs" />
     <Compile Include="Models\DataSetStats.cs" />
+    <Compile Include="Models\DocumentBulkSettings.cs" />
     <Compile Include="Models\DocumentCopySettings.cs" />
     <Compile Include="Models\DocumentFilterSettings.cs" />
     <Compile Include="Models\DocumentMoveSettings.cs" />
@@ -65,6 +67,7 @@
     <Compile Include="Models\Enums\ServiceStatusEnum.cs" />
     <Compile Include="Models\Enums\OrderDirectionEnum.cs" />
     <Compile Include="Models\Enums\ServiceTypeEnum.cs" />
+    <Compile Include="Models\BulkErrorsModel.cs" />
     <Compile Include="Models\ErrorsModel.cs" />
     <Compile Include="Models\Pagination.cs" />
     <Compile Include="Models\PaginatedList.cs" />
