@@ -12,7 +12,6 @@ namespace Slamby.SDK.Net.Models.Services
         [Required]
         public string DataSetName { get; set; }
 
-        [Required]
         public List<string> TagIdList { get; set; }
 
         [Required]
