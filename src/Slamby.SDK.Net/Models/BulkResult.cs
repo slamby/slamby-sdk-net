@@ -1,6 +1,6 @@
 ﻿namespace Slamby.SDK.Net.Models
 {
-    public class BulkError
+    public class BulkResult
     {
         public int StatusCode { get; set; }
 
