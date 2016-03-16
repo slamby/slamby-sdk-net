@@ -51,9 +51,11 @@
     <Compile Include="Managers\DocumentManager.cs" />
     <Compile Include="Managers\IDataSetManager.cs" />
     <Compile Include="Managers\IDocumentManager.cs" />
-    <Compile Include="Managers\IServiceManager.cs" />
+    <Compile Include="Managers\Services\ClassifierServiceManager.cs" />
+    <Compile Include="Managers\Services\IClassifierServiceManager.cs" />
+    <Compile Include="Managers\Services\IServiceManager.cs" />
     <Compile Include="Managers\ITagManager.cs" />
-    <Compile Include="Managers\ServiceManager.cs" />
+    <Compile Include="Managers\Services\ServiceManager.cs" />
     <Compile Include="Managers\TagManager.cs" />
     <Compile Include="Models\BulkError.cs" />
     <Compile Include="Models\ClientResponse.cs" />
@@ -76,6 +78,8 @@
     <Compile Include="Models\Process.cs" />
     <Compile Include="Models\Services\Classifier\ClassifierActivateSettings.cs" />
     <Compile Include="Models\Services\Classifier\ClassifierPrepareSettings.cs" />
+    <Compile Include="Models\Services\Classifier\ClassifierRecommendationRequest.cs" />
+    <Compile Include="Models\Services\Classifier\ClassifierRecommendationResult.cs" />
     <Compile Include="Models\Services\Classifier\ClassifierService.cs" />
     <Compile Include="Models\Services\Service.cs" />
     <Compile Include="Models\Services\ServiceActivateSettings.cs" />
