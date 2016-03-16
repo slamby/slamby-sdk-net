@@ -51,6 +51,8 @@
     <Compile Include="Managers\DocumentManager.cs" />
     <Compile Include="Managers\IDataSetManager.cs" />
     <Compile Include="Managers\IDocumentManager.cs" />
+    <Compile Include="Managers\IProcessManager.cs" />
+    <Compile Include="Managers\ProcessManager.cs" />
     <Compile Include="Managers\Services\ClassifierServiceManager.cs" />
     <Compile Include="Managers\Services\IClassifierServiceManager.cs" />
     <Compile Include="Managers\Services\IServiceManager.cs" />

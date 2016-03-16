@@ -15,7 +15,6 @@ namespace Slamby.SDK.Net.Managers
         private static readonly string ActivateEndpointSuffix = "/activate";
         private static readonly string DeactivateEndpointSuffix = "/deactivate";
         private static readonly string RecommendEndpointSuffix = "/recommend";
-        private readonly Dictionary<string, string> Headers = new Dictionary<string, string>();
 
         public ClassifierServiceManager(Configuration config) 
             : base(config, Endpoint)
@@ -25,27 +24,27 @@ namespace Slamby.SDK.Net.Managers
 
         public async Task<ClientResponseWithObject<ClassifierService>> GetServiceAsync(string serviceId)
         {
-            return await _client.SendAsync<ClassifierService>(System.Net.Http.HttpMethod.Get, null, serviceId, null, Headers);
+            return await _client.SendAsync<ClassifierService>(System.Net.Http.HttpMethod.Get, null, serviceId, null, null);
         }
 
         public async Task<ClientResponseWithObject<Process>> PrepareServiceAsync(string serviceId, ClassifierPrepareSettings classifierPrepareSettings)
         {
-            return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, classifierPrepareSettings, $"serviceId/{PrepareEndpointSuffix}", null, Headers);
+            return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, classifierPrepareSettings, $"serviceId/{PrepareEndpointSuffix}", null, null);
         }
 
         public async Task<ClientResponse> ActivateServiceAsync(string serviceId, ClassifierActivateSettings classifierActivateSettings)
         {
-            return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, classifierActivateSettings, $"serviceId/{ActivateEndpointSuffix}", null, Headers);
+            return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, classifierActivateSettings, $"serviceId/{ActivateEndpointSuffix}", null, null);
         }
 
         public async Task<ClientResponse> DeactivateServiceAsync(string serviceId)
         {
-            return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, null, $"serviceId/{DeactivateEndpointSuffix}", null, Headers);
+            return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, null, $"serviceId/{DeactivateEndpointSuffix}", null, null);
         }
 
         public async Task<ClientResponseWithObject<ClassifierRecommendationResult>> RecommendServiceAsync(string serviceId, ClassifierRecommendationRequest classifierRecommendationRequest)
         {
-            return await _client.SendAsync<ClassifierRecommendationResult>(System.Net.Http.HttpMethod.Post, classifierRecommendationRequest, $"serviceId/{RecommendEndpointSuffix}", null, Headers);
+            return await _client.SendAsync<ClassifierRecommendationResult>(System.Net.Http.HttpMethod.Post, classifierRecommendationRequest, $"serviceId/{RecommendEndpointSuffix}", null, null);
         }
     }
 }
