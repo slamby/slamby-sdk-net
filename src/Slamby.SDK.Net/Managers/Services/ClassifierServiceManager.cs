@@ -29,22 +29,22 @@ namespace Slamby.SDK.Net.Managers
 
         public async Task<ClientResponseWithObject<Process>> PrepareServiceAsync(string serviceId, ClassifierPrepareSettings classifierPrepareSettings)
         {
-            return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, classifierPrepareSettings, $"serviceId/{PrepareEndpointSuffix}", null, null);
+            return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, classifierPrepareSettings, $"{serviceId}/{PrepareEndpointSuffix}", null, null);
         }
 
         public async Task<ClientResponse> ActivateServiceAsync(string serviceId, ClassifierActivateSettings classifierActivateSettings)
         {
-            return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, classifierActivateSettings, $"serviceId/{ActivateEndpointSuffix}", null, null);
+            return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, classifierActivateSettings, $"{serviceId}/{ActivateEndpointSuffix}", null, null);
         }
 
         public async Task<ClientResponse> DeactivateServiceAsync(string serviceId)
         {
-            return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, null, $"serviceId/{DeactivateEndpointSuffix}", null, null);
+            return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, null, $"{serviceId}/{DeactivateEndpointSuffix}", null, null);
         }
 
-        public async Task<ClientResponseWithObject<ClassifierRecommendationResult>> RecommendServiceAsync(string serviceId, ClassifierRecommendationRequest classifierRecommendationRequest)
+        public async Task<ClientResponseWithObject<IEnumerable<ClassifierRecommendationResult>>> RecommendServiceAsync(string serviceId, ClassifierRecommendationRequest classifierRecommendationRequest)
         {
-            return await _client.SendAsync<ClassifierRecommendationResult>(System.Net.Http.HttpMethod.Post, classifierRecommendationRequest, $"serviceId/{RecommendEndpointSuffix}", null, null);
+            return await _client.SendAsync<IEnumerable<ClassifierRecommendationResult>>(System.Net.Http.HttpMethod.Post, classifierRecommendationRequest, $"{serviceId}/{RecommendEndpointSuffix}", null, null);
         }
     }
 }

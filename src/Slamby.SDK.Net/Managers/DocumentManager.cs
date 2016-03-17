@@ -68,10 +68,10 @@ namespace Slamby.SDK.Net.Managers
             return await _client.SendAsync(System.Net.Http.HttpMethod.Put, document, documentId, null, Headers);
         }
 
-        public async Task<ClientResponse> BulkDocumentsAsync(DocumentBulkSettings settings)
+        public async Task<ClientResponseWithObject<BulkResults>> BulkDocumentsAsync(DocumentBulkSettings settings)
         {
             var client = new ApiClient(_configuration, BulkEndpoint);
-            return await client.SendAsync(System.Net.Http.HttpMethod.Post, settings, null, null, Headers);
+            return await client.SendAsync<BulkResults>(System.Net.Http.HttpMethod.Post, settings, null, null, Headers);
         }
     }
 }

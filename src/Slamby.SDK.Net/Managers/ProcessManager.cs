@@ -25,7 +25,7 @@ namespace Slamby.SDK.Net.Managers
 
         public async Task<ClientResponse> CancelProcessAsync(string processId)
         {
-            return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, null, $"processId/{CancelEndpointSuffix}", null, null);
+            return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, null, $"{processId}/{CancelEndpointSuffix}", null, null);
         }
     }
 }

@@ -18,6 +18,6 @@ namespace Slamby.SDK.Net.Managers
 
         Task<ClientResponse> DeactivateServiceAsync(string serviceId);
 
-        Task<ClientResponseWithObject<ClassifierRecommendationResult>> RecommendServiceAsync(string serviceId, ClassifierRecommendationRequest classifierRecommendationRequest);
+        Task<ClientResponseWithObject<IEnumerable<ClassifierRecommendationResult>>> RecommendServiceAsync(string serviceId, ClassifierRecommendationRequest classifierRecommendationRequest);
     }
 }
