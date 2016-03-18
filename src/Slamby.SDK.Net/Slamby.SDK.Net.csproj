@@ -83,6 +83,8 @@
     <Compile Include="Models\Services\Classifier\ClassifierRecommendationRequest.cs" />
     <Compile Include="Models\Services\Classifier\ClassifierRecommendationResult.cs" />
     <Compile Include="Models\Services\Classifier\ClassifierService.cs" />
+    <Compile Include="Models\Services\Prc\PrcPrepareSettings.cs" />
+    <Compile Include="Models\Services\Prc\PrcService.cs" />
     <Compile Include="Models\Services\Service.cs" />
     <Compile Include="Models\Services\ServiceActivateSettings.cs" />
     <Compile Include="Models\Services\ServicePrepareSettings.cs" />

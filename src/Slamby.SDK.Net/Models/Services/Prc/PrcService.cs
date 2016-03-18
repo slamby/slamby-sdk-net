@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Slamby.SDK.Net.Models.Enums
+namespace Slamby.SDK.Net.Models.Services
 {
-    public enum ServiceTypeEnum
+    public class PrcService : Service
     {
-        Classifier,
-        Prc
+
     }
 }
