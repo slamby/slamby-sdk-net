@@ -7,6 +7,7 @@ namespace Slamby.SDK.Net.Managers
     public class TagManager : BaseManager, ITagManager
     {
         private static readonly string Endpoint = "api/tags";
+        private static readonly string BulkEndpoint = "api/tags/bulk";
         private readonly Dictionary<string, string> Headers = new Dictionary<string, string>();
 
         public TagManager(Configuration config, string dataSetName) : 
@@ -51,6 +52,12 @@ namespace Slamby.SDK.Net.Managers
         public async Task<ClientResponse> UpdateTagAsync(string tagId, Tag tag)
         {
             return await _client.SendAsync(System.Net.Http.HttpMethod.Put, tag, tagId, null, Headers);
+        }
+
+        public async Task<ClientResponseWithObject<BulkResults>> BulkTagsAsync(TagBulkSettings settings)
+        {
+            var client = new ApiClient(_configuration, BulkEndpoint);
+            return await client.SendAsync<BulkResults>(System.Net.Http.HttpMethod.Post, settings, null, null, Headers);
         }
     }
 }
