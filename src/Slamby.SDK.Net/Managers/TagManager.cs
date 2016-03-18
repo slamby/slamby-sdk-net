@@ -57,7 +57,7 @@ namespace Slamby.SDK.Net.Managers
         public async Task<ClientResponseWithObject<BulkResults>> BulkTagsAsync(TagBulkSettings settings)
         {
             var client = new ApiClient(_configuration, BulkEndpoint);
-            return await client.SendAsync<BulkResults>(System.Net.Http.HttpMethod.Post, settings, null, null, Headers);
+            return await client.SendAsync<BulkResults>(System.Net.Http.HttpMethod.Post, settings, null, null, Headers, true);
         }
     }
 }

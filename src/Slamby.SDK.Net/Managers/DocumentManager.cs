@@ -48,13 +48,13 @@ namespace Slamby.SDK.Net.Managers
         public async Task<ClientResponseWithObject<PaginatedList<object>>> GetSampleDocumentsAsync(DocumentSampleSettings sampleSettings)
         {
             var client = new ApiClient(_configuration, SampleEndpoint);
-            return await client.SendAsync<PaginatedList<object>>(System.Net.Http.HttpMethod.Post, sampleSettings, null, null, Headers);
+            return await client.SendAsync<PaginatedList<object>>(System.Net.Http.HttpMethod.Post, sampleSettings, null, null, Headers, true);
         }
 
         public async Task<ClientResponseWithObject<PaginatedList<object>>> GetFilteredDocumentsAsync(DocumentFilterSettings filterSettings)
         {
             var client = new ApiClient(_configuration, FilterEndpoint);
-            return await client.SendAsync<PaginatedList<object>>(System.Net.Http.HttpMethod.Post, filterSettings, null, null, Headers);
+            return await client.SendAsync<PaginatedList<object>>(System.Net.Http.HttpMethod.Post, filterSettings, null, null, Headers, true);
         }
 
         public async Task<ClientResponse> MoveDocumentsToAsync(DocumentMoveSettings settings)
@@ -71,7 +71,7 @@ namespace Slamby.SDK.Net.Managers
         public async Task<ClientResponseWithObject<BulkResults>> BulkDocumentsAsync(DocumentBulkSettings settings)
         {
             var client = new ApiClient(_configuration, BulkEndpoint);
-            return await client.SendAsync<BulkResults>(System.Net.Http.HttpMethod.Post, settings, null, null, Headers);
+            return await client.SendAsync<BulkResults>(System.Net.Http.HttpMethod.Post, settings, null, null, Headers, true);
         }
     }
 }
