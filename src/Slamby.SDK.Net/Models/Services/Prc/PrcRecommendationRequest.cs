@@ -16,6 +16,10 @@ namespace Slamby.SDK.Net.Models.Services
 
         public bool NeedDocumentInResult { get; set; }
 
-        public Dictionary<string, string> QueryDictionary { get; set; }
+        [Required]
+        public string TagId { get; set; }
+
+        public Filter Filter { get; set; }
+        public List<Weight> Weights { get; set; }
     }
 }
