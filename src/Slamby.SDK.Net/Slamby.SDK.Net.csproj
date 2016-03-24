@@ -55,8 +55,10 @@
     <Compile Include="Managers\ProcessManager.cs" />
     <Compile Include="Managers\Services\ClassifierServiceManager.cs" />
     <Compile Include="Managers\Services\IClassifierServiceManager.cs" />
+    <Compile Include="Managers\Services\IPrcServiceManager.cs" />
     <Compile Include="Managers\Services\IServiceManager.cs" />
     <Compile Include="Managers\ITagManager.cs" />
+    <Compile Include="Managers\Services\PrcServiceManager.cs" />
     <Compile Include="Managers\Services\ServiceManager.cs" />
     <Compile Include="Managers\TagManager.cs" />
     <Compile Include="Models\BulkResult.cs" />
