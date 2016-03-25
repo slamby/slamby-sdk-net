@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Slamby.SDK.Net.Models;
 using Slamby.SDK.Net.Helpers;
+using Newtonsoft.Json.Converters;
 
 namespace Slamby.SDK.Net
 {
@@ -22,22 +23,30 @@ namespace Slamby.SDK.Net
             _endpoint = endpoint;
         }
 
-        internal async Task<ClientResponse> SendAsync(HttpMethod method, object body, string urlPart, Dictionary<string, string> queryParameters, Dictionary<string, string> headers)
+        internal async Task<ClientResponse> SendAsync(HttpMethod method, object body, string urlPart, Dictionary<string, string> queryParameters, Dictionary<string, string> headers, bool useGzip = false)
         {
-            return await SendAsync<object>(method, body, urlPart, queryParameters, headers);
+            return await SendAsync<object>(method, body, urlPart, queryParameters, headers, useGzip);
         }
 
-        internal async Task<ClientResponseWithObject<T>> SendAsync<T>(HttpMethod method, object body, string urlPart, Dictionary<string, string> queryParameters, Dictionary<string, string> headers)
+        internal async Task<ClientResponseWithObject<T>> SendAsync<T>(HttpMethod method, object body, string urlPart, Dictionary<string, string> queryParameters, Dictionary<string, string> headers, bool useGzip = false)
         {
             ClientResponseWithObject<T> clientResponse = null;
-            var loggingHandler = new LoggingHandler();
+            var messageHandler = new ApiHttpMessageHandler(useGzip);
+            var jsonSerializerSettings = new JsonSerializerSettings();
 
-            using (var client = new HttpClient(loggingHandler))
+            jsonSerializerSettings.Converters.Add(new StringEnumConverter());
+
+            using (var client = new HttpClient(messageHandler))
             {
                 client.BaseAddress = _configuration.ApiBaseEndpoint;
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.TryAddWithoutValidation(Constants.AuthorizationHeader, string.Format("{0} {1}", Constants.AuthorizationMethodSlamby, _configuration.ApiSecret));
+
+                if (useGzip)
+                {
+                    client.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
+                }
 
                 if (headers != null)
                 {
@@ -47,10 +56,16 @@ namespace Slamby.SDK.Net
                     }
                 }
 
-                ByteArrayContent content = null;
+                HttpContent content = null;
                 if (body != null)
                 {
-                    content = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");
+                    var json = JsonConvert.SerializeObject(body, jsonSerializerSettings);
+                    content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    if (useGzip)
+                    {
+                        content = new CompressedContent(content, "gzip");
+                    }
                 }
                 else
                 {
@@ -71,7 +86,6 @@ namespace Slamby.SDK.Net
                 else if (method == HttpMethod.Delete)
                 {
                     responseMsg = await client.DeleteAsync(appendedUri);
-
                 }
                 else if (method == HttpMethod.Put)
                 {
@@ -94,16 +108,20 @@ namespace Slamby.SDK.Net
                 {
                     if (!string.IsNullOrEmpty(respString))
                     {
-                        clientResponse.ResponseObject = JsonConvert.DeserializeObject<T>(respString);
+                        clientResponse.ResponseObject = JsonConvert.DeserializeObject<T>(respString, jsonSerializerSettings);
                     }
                 }
                 else
                 {
                     if (!string.IsNullOrEmpty(respString))
                     {
-                        clientResponse.Errors = JsonConvert.DeserializeObject<ErrorsModel>(respString);
+                        clientResponse.Errors = JsonConvert.DeserializeObject<ErrorsModel>(respString, jsonSerializerSettings);
                     }
                 }
+
+                clientResponse.ApiVersion = responseMsg.Headers.Where(header => string.Equals(header.Key, Constants.ApiVersionHeader, StringComparison.OrdinalIgnoreCase))
+                    .SelectMany(header => header.Value)
+                    .FirstOrDefault() ?? string.Empty;
 
                 return clientResponse;
             }
@@ -121,28 +139,6 @@ namespace Slamby.SDK.Net
                 url = string.Format("{0}?{1}", url, string.Join("&", queryParamsDic.Select((x) => x.Key + "=" + x.Value)));
             }
             return url;
-        }
-    }
-
-    public class LoggingHandler : System.Net.Http.DelegatingHandler
-    {
-        private static Random rnd = new Random();
-
-        private string requestId;
-
-        public LoggingHandler()
-        {
-            InnerHandler = new HttpClientHandler();
-            requestId = string.Format("{0}{1}", DateTime.Now.Ticks, rnd.Next(0, 100000));
-        }
-
-        protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, System.Threading.CancellationToken cancellationToken)
-        {
-            RawMessagePublisher.Instance.Publish(request.Format(requestId));
-            var response = await base.SendAsync(request, cancellationToken);
-            RawMessagePublisher.Instance.Publish(response.Format(requestId));
-
-            return response;
         }
     }
 }
