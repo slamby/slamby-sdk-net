@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Slamby.SDK.Net.Managers.Services
+namespace Slamby.SDK.Net.Managers
 {
     public class PrcServiceManager : BaseManager, IPrcServiceManager
     {
