@@ -17,9 +17,9 @@ namespace Slamby.SDK.Net.Managers
             Headers.Add(Constants.DataSetHeader, dataSetName);
         }
 
-        public async Task<ClientResponse> CreateTagAsync(Tag tag)
+        public async Task<ClientResponseWithObject<Tag>> CreateTagAsync(Tag tag)
         {
-            return await _client.SendAsync(System.Net.Http.HttpMethod.Post, tag, null, null, Headers);
+            return await _client.SendAsync<Tag>(System.Net.Http.HttpMethod.Post, tag, null, null, Headers);
         }
 
         public async Task<ClientResponse> DeleteTagAsync(string tagId, bool force, bool cleanDocuments)
