@@ -8,7 +8,21 @@ namespace Slamby.SDK.Net.Helpers
     {
         public static string Format(this HttpRequestMessage request, string requestId)
         {
-            var content = Task.Run(async () => request.Content != null ? await request.Content.ReadAsStringAsync() : string.Empty).Result;
+            var content = string.Empty;
+
+            if (request.Content != null)
+            {
+                content = Task.Run(async () =>
+                    {
+                        var httpContent = request.Content is CompressedContent
+                            ? (request.Content as CompressedContent).OriginalContent
+                            : request.Content;
+
+                        return await httpContent.ReadAsStringAsync();
+                    }
+                ).Result;
+            }
+                
             var requestString = string.Format(
                 "REQUEST #{4}\n" +
                 "----------------------\n" +
