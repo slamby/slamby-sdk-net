@@ -39,6 +39,7 @@ namespace Slamby.SDK.Net
             using (var client = new HttpClient(messageHandler))
             {
                 client.BaseAddress = _configuration.ApiBaseEndpoint;
+                client.Timeout = _configuration.Timeout;
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.TryAddWithoutValidation(Constants.AuthorizationHeader, string.Format("{0} {1}", Constants.AuthorizationMethodSlamby, _configuration.ApiSecret));
