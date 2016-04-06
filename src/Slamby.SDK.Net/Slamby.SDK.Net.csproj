@@ -114,9 +114,9 @@
   </Target>
   <Target Name="AfterBuild">
   </Target>
-  -->
   <Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
     <Exec Command="nuget\nuget.exe pack Slamby.SDK.Net.csproj -Prop Configuration=Release -Symbols -o .\bin\Release">
     </Exec>
   </Target>
+  -->
 </Project>
