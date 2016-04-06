@@ -96,7 +96,7 @@ var dataset = manager.GetDataSetAsync().Result;
 ```
 
 ## Dataset
-Slamby provides **Dataset** as a data storage. A dataset is a JSON document storage that allows to store schema free JSON objects, indexes and additional parameters. Inside you server you can create and manage multiple datasets.
+Slamby provides **Dataset** as a data storage. A dataset is a JSON document storage that allows to store schema free JSON objects, indexes and additional parameters. Inside your server you can create and manage multiple datasets.
 
 You can find more details about the Datasets [here.](http://developers.slamby.com/api/#datasets)
 
@@ -267,7 +267,7 @@ var result = await manager.MoveDocumentsToAsync(settings);
 
 ## Tags
 
-Manage tags to organize your data. Using tags create a tag cloud or a hierachical tag tree.
+Manage tags to organize your data. Using tags create a tag cloud or a hierarchical tag tree.
 
 You can find more details about the Tags [here.](http://developers.slamby.com/api/#tags)
 
@@ -330,8 +330,8 @@ var result = await manager.UpdateTagAsync("3", tag);
 
 Remove a tag from tag list. By default, documents and datasets are not affected.
 The method have two additional parameter:
-- `force` - if true then the tag with children can be deleted, but be careful, all the children will be deleted also!
-- `cleanDocuments` - if true then the the removed tag will be also removed from the documents
+- `force` - if true then the tag with children can be deleted, but be careful! All the children will be deleted also.
+- `cleanDocuments` - if true then the removed tag will be also removed from the documents
 
 _Example:_
 
@@ -427,7 +427,7 @@ var cancelRespone = await processManager.CancelProcessAsync(process.Id);
 
 
 ## Services
-You can quickly create a data processing service from the available service templates. Manage you data processing with services, run different tests, run more data management services parallelly.
+You can quickly create a data processing service from the available service templates. Manage your data processing with services, run different tests, run more data management services parallelly.
 
 ### Create Service
 
