@@ -104,20 +104,27 @@ namespace Slamby.SDK.Net
                     ServerMessage = responseMsg.ReasonPhrase
                 };
 
+
                 var respString = await responseMsg.Content.ReadAsStringAsync();
-                if (responseMsg.IsSuccessStatusCode)
+
+                try
                 {
                     if (!string.IsNullOrEmpty(respString))
                     {
-                        clientResponse.ResponseObject = JsonConvert.DeserializeObject<T>(respString, jsonSerializerSettings);
+                        if (responseMsg.IsSuccessStatusCode)
+                        {
+                            clientResponse.ResponseObject = JsonConvert.DeserializeObject<T>(respString, jsonSerializerSettings);
+                        }
+                        else
+                        {
+                            clientResponse.Errors = JsonConvert.DeserializeObject<ErrorsModel>(respString, jsonSerializerSettings);
+                        }
                     }
                 }
-                else
+                catch
                 {
-                    if (!string.IsNullOrEmpty(respString))
-                    {
-                        clientResponse.Errors = JsonConvert.DeserializeObject<ErrorsModel>(respString, jsonSerializerSettings);
-                    }
+                    clientResponse.IsSuccessFul = false;
+                    clientResponse.Errors = ErrorsModel.Create("Response is not a valid JSON:\n" + respString);
                 }
 
                 clientResponse.ApiVersion = responseMsg.Headers.Where(header => string.Equals(header.Key, Constants.ApiVersionHeader, StringComparison.OrdinalIgnoreCase))
