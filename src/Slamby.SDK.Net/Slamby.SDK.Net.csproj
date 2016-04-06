@@ -104,7 +104,9 @@
     <Compile Include="Helpers\DebugSubscriber.cs" />
     <Compile Include="Helpers\RawMessagePublisher.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="nuget\nuget.exe" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -114,7 +116,7 @@
   </Target>
   -->
   <Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
-    <Exec Command="nuget pack Slamby.SDK.Net.csproj -Prop Configuration=Release -Symbols -o .\bin\Release">
+    <Exec Command="nuget\nuget.exe pack Slamby.SDK.Net.csproj -Prop Configuration=Release -Symbols -o .\bin\Release">
     </Exec>
   </Target>
 </Project>
