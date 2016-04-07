@@ -18,6 +18,7 @@ Github page:  [www.github.com/slamby/slamby-sdk-net](https://github.com/slamby/s
 - bulk tag import:  TagManager -> BulkTagsAsync
 - remove non-existent Tags from Documents: TagManager -> CleanDocumentsAsync
 - version information send
+
 ---
 
 
