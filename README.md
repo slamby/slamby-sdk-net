@@ -13,11 +13,11 @@ Github page:  [www.github.com/slamby/slamby-sdk-net](https://github.com/slamby/s
 - ServiceManager
 - ClassifierServiceManager
 - ProcessesManager
-- change: Task<ClientResponseWithObject<IEnumerable<Tag>>> GetTagsAsync(bool withDetails = false);
-- change: Task<ClientResponseWithObject<Tag>> GetTagAsync(string tagId, bool withDetails = false);
+- change: `Task<ClientResponseWithObject<IEnumerable<Tag>>> GetTagsAsync(bool withDetails = false);`
+- change: `Task<ClientResponseWithObject<Tag>> GetTagAsync(string tagId, bool withDetails = false);`
 - bulk tag import:  TagManager -> BulkTagsAsync
 - remove non-existent Tags from Documents: TagManager -> CleanDocumentsAsync
-
+- version information send
 ---
 
 
@@ -35,6 +35,8 @@ var configuration = new Configuration
 You have to use this `configuration` object for every `Manager`.
 
 You can find more details about the Authentication [here](http://developers.slamby.com/api/#authentication)
+
+Slamby SDK.NET sends its version information to the API for version matching. Major and minor values should match in order to prevent version incompatibility. 
 
 ### Response Basics
 

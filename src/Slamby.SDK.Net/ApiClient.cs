@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Slamby.SDK.Net.Models;
-using Slamby.SDK.Net.Helpers;
 using Newtonsoft.Json.Converters;
+using Slamby.SDK.Net.Helpers;
+using Slamby.SDK.Net.Models;
 
 namespace Slamby.SDK.Net
 {
@@ -43,6 +44,7 @@ namespace Slamby.SDK.Net
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.TryAddWithoutValidation(Constants.AuthorizationHeader, string.Format("{0} {1}", Constants.AuthorizationMethodSlamby, _configuration.ApiSecret));
+                client.DefaultRequestHeaders.TryAddWithoutValidation(Constants.SdkVersionHeader, GetType().GetTypeInfo().Assembly.GetName().Version.ToString());
 
                 if (useGzip)
                 {
