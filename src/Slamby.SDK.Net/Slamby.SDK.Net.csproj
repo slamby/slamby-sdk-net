@@ -67,6 +67,7 @@
     <Compile Include="Models\ClientResponse.cs" />
     <Compile Include="Models\DataSet.cs" />
     <Compile Include="Models\DataSetStats.cs" />
+    <Compile Include="Models\Enums\ProcessTypeEnum.cs" />
     <Compile Include="Models\TagBulkSettings.cs" />
     <Compile Include="Models\DocumentBulkSettings.cs" />
     <Compile Include="Models\DocumentCopySettings.cs" />
