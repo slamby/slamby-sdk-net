@@ -13,8 +13,10 @@ namespace Slamby.SDK.Net.Models
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
         public double Percent { get; set; }
+        public string Description { get; set; }
         public ProcessStatusEnum Status { get; set; }
         public ProcessTypeEnum Type { get; set; }
         public List<string> ErrorMessages { get; set; }
+        public string ResultMessage { get; set; }
     }
 }
