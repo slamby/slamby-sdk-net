@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slamby.SDK.Net", "Slamby.SDK.Net\Slamby.SDK.Net.csproj", "{09CFD7A2-A50A-4935-B8B2-4B927DEEC5C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slamby.SDK.Net.Tests", "Slamby.SDK.Net.Tests\Slamby.SDK.Net.Tests.csproj", "{7B14534C-7557-49D5-80D9-D21498203090}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{09CFD7A2-A50A-4935-B8B2-4B927DEEC5C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09CFD7A2-A50A-4935-B8B2-4B927DEEC5C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09CFD7A2-A50A-4935-B8B2-4B927DEEC5C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B14534C-7557-49D5-80D9-D21498203090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B14534C-7557-49D5-80D9-D21498203090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B14534C-7557-49D5-80D9-D21498203090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B14534C-7557-49D5-80D9-D21498203090}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
