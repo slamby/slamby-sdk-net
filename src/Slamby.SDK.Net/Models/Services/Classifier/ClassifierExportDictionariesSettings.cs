@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Slamby.SDK.Net.Models.Services.Classifier
+namespace Slamby.SDK.Net.Models.Services
 {
     public class ClassifierExportDictionariesSettings
     {
