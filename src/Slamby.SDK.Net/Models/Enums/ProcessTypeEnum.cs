@@ -9,6 +9,7 @@ namespace Slamby.SDK.Net.Models.Enums
     public enum ProcessTypeEnum
     {
         ClassifierPrepare,
-        PrcPrepare
+        PrcPrepare,
+        ClassifierExportDictionaries
     }
 }
