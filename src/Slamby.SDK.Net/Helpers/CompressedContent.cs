@@ -13,16 +13,24 @@ namespace Slamby.SDK.Net.Helpers
         private readonly HttpContent originalContent;
         private readonly string encodingType;
 
+        public HttpContent OriginalContent
+        {
+            get
+            {
+                return originalContent;
+            }
+        }
+
         public CompressedContent(HttpContent content, string encodingType)
         {
             if (content == null)
             {
-                throw new ArgumentNullException("content");
+                throw new ArgumentNullException(nameof(content));
             }
 
             if (encodingType == null)
             {
-                throw new ArgumentNullException("encodingType");
+                throw new ArgumentNullException(nameof(encodingType));
             }
 
             originalContent = content;

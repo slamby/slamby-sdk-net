@@ -6,7 +6,6 @@ namespace Slamby.SDK.Net.Managers
 {
     public interface IDocumentManager
     {
-        Task<ClientResponseWithObject<IEnumerable<object>>> GetDocumentsAsync(string tagId = null);
         Task<ClientResponseWithObject<PaginatedList<object>>> GetSampleDocumentsAsync(DocumentSampleSettings sampleSettings);
         Task<ClientResponseWithObject<PaginatedList<object>>> GetFilteredDocumentsAsync(DocumentFilterSettings filterSettings);
 

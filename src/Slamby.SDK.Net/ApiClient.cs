@@ -40,6 +40,7 @@ namespace Slamby.SDK.Net
             using (var client = new HttpClient(messageHandler))
             {
                 client.BaseAddress = _configuration.ApiBaseEndpoint;
+                client.Timeout = _configuration.Timeout;
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.TryAddWithoutValidation(Constants.AuthorizationHeader, string.Format("{0} {1}", Constants.AuthorizationMethodSlamby, _configuration.ApiSecret));
@@ -105,20 +106,27 @@ namespace Slamby.SDK.Net
                     ServerMessage = responseMsg.ReasonPhrase
                 };
 
+
                 var respString = await responseMsg.Content.ReadAsStringAsync();
-                if (responseMsg.IsSuccessStatusCode)
+
+                try
                 {
                     if (!string.IsNullOrEmpty(respString))
                     {
-                        clientResponse.ResponseObject = JsonConvert.DeserializeObject<T>(respString, jsonSerializerSettings);
+                        if (responseMsg.IsSuccessStatusCode)
+                        {
+                            clientResponse.ResponseObject = JsonConvert.DeserializeObject<T>(respString, jsonSerializerSettings);
+                        }
+                        else
+                        {
+                            clientResponse.Errors = JsonConvert.DeserializeObject<ErrorsModel>(respString, jsonSerializerSettings);
+                        }
                     }
                 }
-                else
+                catch
                 {
-                    if (!string.IsNullOrEmpty(respString))
-                    {
-                        clientResponse.Errors = JsonConvert.DeserializeObject<ErrorsModel>(respString, jsonSerializerSettings);
-                    }
+                    clientResponse.IsSuccessFul = false;
+                    clientResponse.Errors = ErrorsModel.Create("Response is not a valid JSON:\n" + respString);
                 }
 
                 clientResponse.ApiVersion = responseMsg.Headers.Where(header => string.Equals(header.Key, Constants.ApiVersionHeader, StringComparison.OrdinalIgnoreCase))

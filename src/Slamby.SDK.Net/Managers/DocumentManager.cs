@@ -40,11 +40,6 @@ namespace Slamby.SDK.Net.Managers
             return await _client.SendAsync<object>(System.Net.Http.HttpMethod.Get, null, documentId, null, Headers);
         }
 
-        public async Task<ClientResponseWithObject<IEnumerable<object>>> GetDocumentsAsync(string tagId = null)
-        {
-            return await _client.SendAsync<IEnumerable<object>>(System.Net.Http.HttpMethod.Get, null, null, null, Headers);
-        }
-
         public async Task<ClientResponseWithObject<PaginatedList<object>>> GetSampleDocumentsAsync(DocumentSampleSettings sampleSettings)
         {
             var client = new ApiClient(_configuration, SampleEndpoint);

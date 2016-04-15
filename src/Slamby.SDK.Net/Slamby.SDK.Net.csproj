@@ -57,8 +57,10 @@
     <Compile Include="Managers\ProcessManager.cs" />
     <Compile Include="Managers\Services\ClassifierServiceManager.cs" />
     <Compile Include="Managers\Services\IClassifierServiceManager.cs" />
+    <Compile Include="Managers\Services\IPrcServiceManager.cs" />
     <Compile Include="Managers\Services\IServiceManager.cs" />
     <Compile Include="Managers\ITagManager.cs" />
+    <Compile Include="Managers\Services\PrcServiceManager.cs" />
     <Compile Include="Managers\Services\ServiceManager.cs" />
     <Compile Include="Managers\TagManager.cs" />
     <Compile Include="Models\BulkResult.cs" />
@@ -77,6 +79,7 @@
     <Compile Include="Models\Enums\ServiceTypeEnum.cs" />
     <Compile Include="Models\BulkResults.cs" />
     <Compile Include="Models\ErrorsModel.cs" />
+    <Compile Include="Models\Filter.cs" />
     <Compile Include="Models\Pagination.cs" />
     <Compile Include="Models\PaginatedList.cs" />
     <Compile Include="Models\PathItem.cs" />
@@ -86,11 +89,17 @@
     <Compile Include="Models\Services\Classifier\ClassifierRecommendationRequest.cs" />
     <Compile Include="Models\Services\Classifier\ClassifierRecommendationResult.cs" />
     <Compile Include="Models\Services\Classifier\ClassifierService.cs" />
+    <Compile Include="Models\Services\Prc\PrcActivateSettings.cs" />
+    <Compile Include="Models\Services\Prc\PrcPrepareSettings.cs" />
+    <Compile Include="Models\Services\Prc\PrcRecommendationResult.cs" />
+    <Compile Include="Models\Services\Prc\PrcRecommendationRequest.cs" />
+    <Compile Include="Models\Services\Prc\PrcService.cs" />
     <Compile Include="Models\Services\Service.cs" />
     <Compile Include="Models\Services\ServiceActivateSettings.cs" />
     <Compile Include="Models\Services\ServicePrepareSettings.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\TagProperties.cs" />
+    <Compile Include="Models\Weight.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\DebugSubscriber.cs" />
     <Compile Include="Helpers\RawMessagePublisher.cs" />
