@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Slamby.SDK.Net.Models
 {
-    public class TagWordsSettings
+    public class TagsWordsSettings
     {
         public List<string> TagIdList { get; set; }
 
