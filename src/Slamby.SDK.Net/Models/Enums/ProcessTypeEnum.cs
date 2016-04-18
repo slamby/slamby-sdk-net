@@ -10,6 +10,8 @@ namespace Slamby.SDK.Net.Models.Enums
     {
         ClassifierPrepare,
         PrcPrepare,
-        ClassifierExportDictionaries
+        ClassifierExportDictionaries,
+        PrcExportDictionaries,
+        TagsWordsExport
     }
 }
