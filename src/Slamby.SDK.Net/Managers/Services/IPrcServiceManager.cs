@@ -19,5 +19,7 @@ namespace Slamby.SDK.Net.Managers
         Task<ClientResponse> DeactivateServiceAsync(string serviceId);
 
         Task<ClientResponseWithObject<IEnumerable<PrcRecommendationResult>>> RecommendServiceAsync(string serviceId, PrcRecommendationRequest prcRecommendationRequest);
+
+        Task<ClientResponseWithObject<Process>> ExportDictionariesAsync(string serviceId, ExportDictionariesSettings settings);
     }
 }

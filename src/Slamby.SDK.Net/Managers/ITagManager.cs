@@ -11,5 +11,6 @@ namespace Slamby.SDK.Net.Managers
         Task<ClientResponseWithObject<Tag>> CreateTagAsync(Tag tag);
         Task<ClientResponse> UpdateTagAsync(string tagId, Tag tag);
         Task<ClientResponse> DeleteTagAsync(string tagId, bool force, bool cleanDocuments);
+        Task<ClientResponseWithObject<Process>> WordsExportAsync(TagsExportWordsSettings settings);
     }
 }
