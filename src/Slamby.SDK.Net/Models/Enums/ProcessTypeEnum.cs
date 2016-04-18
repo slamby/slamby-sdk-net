@@ -12,6 +12,6 @@ namespace Slamby.SDK.Net.Models.Enums
         PrcPrepare,
         ClassifierExportDictionaries,
         PrcExportDictionaries,
-        TagsWordsExport
+        TagsExportWords
     }
 }
