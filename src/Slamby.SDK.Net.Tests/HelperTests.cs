@@ -9,11 +9,11 @@ namespace Slamby.SDK.Net.Tests
         [Fact]
         public void RawMessagePublisher_should_not_accept_null_reference_subscriber()
         {
-            // arrange
+            // Arrange
 
-            // act
+            // Act
 
-            // assert
+            // Assert
             Assert.Throws<ArgumentNullException>(() => RawMessagePublisher.Instance.AddSubscriber(null));
             Assert.Throws<ArgumentNullException>(() => RawMessagePublisher.Instance.RemoveSubscriber(null));
         }

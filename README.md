@@ -657,7 +657,7 @@ var recommendResponse = (await prcServiceManager.RecommendServiceAsync(serviceId
 
 _Example:_
 ```
-var prcServiceManager = new prcServiceManager(_configuration);
+var prcServiceManager = new PrcServiceManager(_configuration);
 var settings = new ExportDictionariesSettings
     {
         TagIdList = new List<string> { "123", "44" }
@@ -665,3 +665,12 @@ var settings = new ExportDictionariesSettings
 var resultProcess = (await prcServiceManager.ExportDictionariesAsync(serviceId, settings));
 ```
 
+## Status
+
+Returns with version, processor, memory and disk information about the API server.
+
+_Example:_
+```
+var statusManager = new StatusManager(_configuration);
+var resultStatus = await statusManager.GetStatusAsync();
+```
