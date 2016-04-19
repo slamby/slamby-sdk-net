@@ -9,6 +9,7 @@ namespace Slamby.SDK.Net.Managers
         private static readonly string Endpoint = "api/tags";
         private static readonly string BulkEndpoint = "api/tags/bulk";
         private static readonly string CleanDocumentsEndpoint = "api/tags/cleandocuments";
+        private static readonly string WordsExportEndpoint = "api/tags/exportwords";
         private readonly Dictionary<string, string> Headers = new Dictionary<string, string>();
 
         public TagManager(Configuration config, string dataSetName) : 
@@ -65,6 +66,12 @@ namespace Slamby.SDK.Net.Managers
         {
             var client = new ApiClient(_configuration, CleanDocumentsEndpoint);
             return await client.SendAsync(System.Net.Http.HttpMethod.Post, null, null, null, Headers);
+        }
+
+        public async Task<ClientResponseWithObject<Process>> WordsExportAsync(TagsExportWordsSettings settings)
+        {
+            var client = new ApiClient(_configuration, WordsExportEndpoint);
+            return await client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, settings, null, null, Headers, true);
         }
     }
 }

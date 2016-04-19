@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Slamby.SDK.Net.Helpers
@@ -38,14 +39,24 @@ namespace Slamby.SDK.Net.Helpers
 
         public void AddSubscriber(IRawMessageSubscriber subscriber)
         {
-            this.Subscribers.AddFirst(subscriber);
-            this.RawDataPublish += subscriber.OnRawDataPublish;
+            if (subscriber == null)
+            {
+                throw new ArgumentNullException(nameof(subscriber));
+            }
+
+            Subscribers.AddFirst(subscriber);
+            RawDataPublish += subscriber.OnRawDataPublish;
         }
 
         public void RemoveSubscriber(IRawMessageSubscriber subscriber)
         {
-            this.RawDataPublish -= subscriber.OnRawDataPublish;
-            this.Subscribers.Remove(subscriber);
+            if (subscriber == null)
+            {
+                throw new ArgumentNullException(nameof(subscriber));
+            }
+
+            RawDataPublish -= subscriber.OnRawDataPublish;
+            Subscribers.Remove(subscriber);
         }
 
         public void Publish(string message)

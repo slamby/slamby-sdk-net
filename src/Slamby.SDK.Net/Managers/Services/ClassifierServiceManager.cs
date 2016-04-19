@@ -15,6 +15,7 @@ namespace Slamby.SDK.Net.Managers
         private static readonly string ActivateEndpointSuffix = "/activate";
         private static readonly string DeactivateEndpointSuffix = "/deactivate";
         private static readonly string RecommendEndpointSuffix = "/recommend";
+        private static readonly string ExportDictionariesEndpointSuffix = "/exportdictionaries";
 
         public ClassifierServiceManager(Configuration config) 
             : base(config, Endpoint)
@@ -45,6 +46,11 @@ namespace Slamby.SDK.Net.Managers
         public async Task<ClientResponseWithObject<IEnumerable<ClassifierRecommendationResult>>> RecommendServiceAsync(string serviceId, ClassifierRecommendationRequest classifierRecommendationRequest)
         {
             return await _client.SendAsync<IEnumerable<ClassifierRecommendationResult>>(System.Net.Http.HttpMethod.Post, classifierRecommendationRequest, $"{serviceId}/{RecommendEndpointSuffix}", null, null);
+        }
+
+        public async Task<ClientResponseWithObject<Process>> ExportDictionariesAsync(string serviceId, ExportDictionariesSettings settings)
+        {
+            return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, settings, $"{serviceId}/{ExportDictionariesEndpointSuffix}", null, null);
         }
     }
 }

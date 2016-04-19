@@ -7,22 +7,17 @@ Github page:  [www.github.com/slamby/slamby-sdk-net](https://github.com/slamby/s
 
 ## Changelog
 ### Features
-- access the API version through the ClientResponse -> ApiVersion property
-- change Tag Path property type to `List<PathItem>`
-- TagManager -> DeleteTagAsync method new parameters: `force` and `cleanDocuments`
-- ServiceManager
-- ClassifierServiceManager
-- ProcessesManager
-- change: `Task<ClientResponseWithObject<IEnumerable<Tag>>> GetTagsAsync(bool withDetails = false);`
-- change: `Task<ClientResponseWithObject<Tag>> GetTagAsync(string tagId, bool withDetails = false);`
-- bulk tag import:  TagManager -> BulkTagsAsync
-- remove non-existent Tags from Documents: TagManager -> CleanDocumentsAsync
-- version information send
+- changes in Document Filter
+- new method in ProcessManager 
+- Prc Service
+- export words and occurences for tags in CSV
+- export dictionaries of classifier or prc services in CSV
+
 
 ---
 
 
-##General
+## General
 
 ### Request Basics
 Configuration example:
@@ -354,6 +349,22 @@ var manager = new TagManager(configuration, "DATASET_NAME");
 var result = await manager.CleanDocumentsAsync();
 ```
 
+### Words Occurences
+
+Get words and the occurences of the words.
+
+
+_Example:_
+
+```
+var manager = new TagManager(configuration, "DATASET_NAME");
+var settings = new TagsExportWordsSettings {
+    NGramList = new List<int> { 1, 2 },
+    TagIdList = new List<string> { "123", "44" }
+};
+var resultProcess = await manager.WordsExportAsync(settings);
+```
+
 ## Sampling
 
 Statistical method to support sampling activity. Using sampling you can easily create **random samples** for experiments.
@@ -390,9 +401,9 @@ You can find more details about the Filter mechanism [here.](http://developers.s
 ```
 var manager = new DocumentManager(configuration, "DATASET_NAME");
 var settings = new DocumentFilterSettings {
+    Filter = new Filter {
+        Query = "title:michelin",
     TagIds = new List<string> { "1" },
-    QueryDictionary = new Dictionary<string, string> {
-        { "title", "michelin" }
     },
     Pagination = new Pagination {
         Limit = 100,
@@ -413,7 +424,19 @@ _Example:_
 
 ```
 var processManager = new ProcessManager(_configuration);
-var response = processManager.GetProcessAsync(processId))
+var response = processManager.GetProcessAsync(processId));
+
+```
+
+### Get Processes
+If the parameter is `true` then you get all processes, if it's `false` (default), then you get only the active processes.
+
+_Example:_
+
+```
+var allStatus = true;
+var processManager = new ProcessManager(_configuration);
+var response = processManager.GetProcessesAsync(allStatus));
 
 ```
 
@@ -550,5 +573,95 @@ var classifierRecommendationRequest = new Models.Services.ClassifierRecommendati
         Count = 5
     };
 var recommendResponse = (await classifierServiceManager.RecommendServiceAsync(serviceId, classifierRecommendationRequest));
+```
+
+
+### Classifier Service Export Dictionaries
+
+_Example:_
+```
+var classifierServiceManager = new ClassifierServiceManager(_configuration);
+var settings = new ExportDictionariesSettings
+    {
+        NGramList = new List<int> { 1, 2 },
+        TagIdList = new List<string> { "123", "44" }
+    };
+var resultProcess = (await classifierServiceManager.ExportDictionariesAsync(serviceId, settings));
+```
+
+
+## Prc Services
+Service for document recommendation. Create a prc service from a selected dataset, specify your settings and use this service API endpoint to get similar documents for your text.
+
+### Get Prc Service
+
+_Example:_
+```
+var prcServiceManager = new PrcServiceManager(_configuration);
+var prcServiceResponse = await prcServiceManager.GetServiceAsync(serviceId);
+```
+
+### Prepare Prc Service
+
+
+_Example:_
+```
+var prcServiceManager = new PrcServiceManager(_configuration);
+var prcPrepareSettings = new PrcPrepareSettings()
+        {
+            DataSetName = "example_dataset",
+            TagIdList = new List<int>() { "10", "11" }
+        };
+var prepareResponse = await prcServiceManager.PrepareServiceAsync(serviceId, prcPrepareSettings);
+var process = prepareResponse.ResponseObject;
+```
+
+
+### Activate Prc Service
+
+_Example:_
+```
+var prcServiceManager = new PrcServiceManager(_configuration);
+var prcActivateSettings = new Models.Services.PrcActivateSettings()
+{
+    FieldsForRecommendation = new List<string>() { "title" }
+};
+var activateResponse = await prcServiceManager.ActivateServiceAsync(serviceId, prcActivateSettings);
+```
+
+### Deactivate Prc Service
+
+_Example:_
+```
+var prcServiceManager = new prcServiceManager(_configuration);
+deactivateResponse = await prcServiceManager.DeactivateServiceAsync(prcServiceId);
+```
+
+### Prc Service Recommendation
+
+_Example:_
+```
+var prcServiceManager = new PrcServiceManager(_configuration);
+var prcRecommendationRequest = new Models.Services.PrcRecommendationRequest()
+    {
+        Text = "get similar documents for this text",
+        NeedDocumentInResult = true,
+        Count = 5,
+        TagId = "10"
+    };
+var recommendResponse = (await prcServiceManager.RecommendServiceAsync(serviceId, prcRecommendationRequest));
+```
+
+
+### Prc Service Export Dictionaries
+
+_Example:_
+```
+var prcServiceManager = new prcServiceManager(_configuration);
+var settings = new ExportDictionariesSettings
+    {
+        TagIdList = new List<string> { "123", "44" }
+    };
+var resultProcess = (await prcServiceManager.ExportDictionariesAsync(serviceId, settings));
 ```
 

@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Slamby.SDK.Net.Models.Enums
 {
-    public enum ProcessStatusEnum
+    public enum ProcessTypeEnum
     {
-        InProgress,
-        Cancelled,
-        Finished,
-        Error,
-        Interrupted,
-        Paused
+        ClassifierPrepare,
+        PrcPrepare,
+        ClassifierExportDictionaries,
+        PrcExportDictionaries,
+        TagsExportWords
     }
 }

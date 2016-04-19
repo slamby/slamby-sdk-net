@@ -12,5 +12,7 @@ namespace Slamby.SDK.Net.Managers
         Task<ClientResponseWithObject<Process>> GetProcessAsync(string processId);
 
         Task<ClientResponse> CancelProcessAsync(string processId);
+
+        Task<ClientResponseWithObject<IEnumerable<Process>>> GetProcessesAsync(bool allStatus = false);
     }
 }

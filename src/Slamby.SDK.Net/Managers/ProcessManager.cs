@@ -27,5 +27,14 @@ namespace Slamby.SDK.Net.Managers
         {
             return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, null, $"{processId}/{CancelEndpointSuffix}", null, null);
         }
+
+        public async Task<ClientResponseWithObject<IEnumerable<Process>>> GetProcessesAsync(bool allStatus = false)
+        {
+            var queryParameters = new Dictionary<string, string>
+            {
+                ["allStatus"] = allStatus.ToString()
+            };
+            return await _client.SendAsync<IEnumerable<Process>>(System.Net.Http.HttpMethod.Get, null, null, queryParameters, null);
+        }
     }
 }

@@ -67,6 +67,8 @@
     <Compile Include="Models\ClientResponse.cs" />
     <Compile Include="Models\DataSet.cs" />
     <Compile Include="Models\DataSetStats.cs" />
+    <Compile Include="Models\Enums\ProcessTypeEnum.cs" />
+    <Compile Include="Models\Services\ExportDictionariesSettings.cs" />
     <Compile Include="Models\TagBulkSettings.cs" />
     <Compile Include="Models\DocumentBulkSettings.cs" />
     <Compile Include="Models\DocumentCopySettings.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Models\Services\ServicePrepareSettings.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\TagProperties.cs" />
+    <Compile Include="Models\TagsExportWordsSettings.cs" />
     <Compile Include="Models\Weight.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\DebugSubscriber.cs" />

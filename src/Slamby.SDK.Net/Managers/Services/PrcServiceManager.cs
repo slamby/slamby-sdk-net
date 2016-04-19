@@ -15,6 +15,7 @@ namespace Slamby.SDK.Net.Managers
         private static readonly string ActivateEndpointSuffix = "/activate";
         private static readonly string DeactivateEndpointSuffix = "/deactivate";
         private static readonly string RecommendEndpointSuffix = "/recommend";
+        private static readonly string ExportDictionariesEndpointSuffix = "/exportdictionaries";
 
         public PrcServiceManager(Configuration config) 
             : base(config, Endpoint)
@@ -47,6 +48,9 @@ namespace Slamby.SDK.Net.Managers
             return await _client.SendAsync<IEnumerable<PrcRecommendationResult>>(System.Net.Http.HttpMethod.Post, prcRecommendationRequest, $"{serviceId}/{RecommendEndpointSuffix}", null, null);
         }
 
-
+        public async Task<ClientResponseWithObject<Process>> ExportDictionariesAsync(string serviceId, ExportDictionariesSettings settings)
+        {
+            return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, settings, $"{serviceId}/{ExportDictionariesEndpointSuffix}", null, null);
+        }
     }
 }
