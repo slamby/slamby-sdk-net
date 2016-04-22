@@ -198,7 +198,7 @@ var result = await manager.GetDocumentAsync("DOCUMENT_ID");
 
 ### Get Document List
 
-Get a document from a dataset.
+Get document list from a dataset.
 
 _Example:_
 
@@ -309,6 +309,8 @@ var result = await manager.GetTagsAsync();
 ```
 
 ### Update Tag
+
+Update a tag by new values.
 
 _Example:_
 
