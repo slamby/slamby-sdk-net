@@ -83,7 +83,7 @@ Content:
 {"Id":"999","Name":"tag","ParentTagId":null,"Properties":null}
 ```
 
-###Async methods
+### Async methods
 
 In all the `Manager` class there are async methods. If you would like to use in a synchronized way, you can get the `Result` object of the task.
 
@@ -517,6 +517,7 @@ var deleteResponse = await serviceManager.DeleteServiceAsync(createdService.Id);
 ```
 
 ## Classifier Services
+
 Service for text classification. Create a classifier service from a selected dataset, specify your settings and use this service API endpoint to classify your incoming text.
 
 ### Get Classifier Service
@@ -593,6 +594,7 @@ var resultProcess = (await classifierServiceManager.ExportDictionariesAsync(serv
 
 
 ## Prc Services
+
 Service for document recommendation. Create a prc service from a selected dataset, specify your settings and use this service API endpoint to get similar documents for your text.
 
 ### Get Prc Service
