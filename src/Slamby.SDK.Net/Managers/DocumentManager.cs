@@ -15,7 +15,8 @@ namespace Slamby.SDK.Net.Managers
         private static readonly string BulkEndpoint = "api/documents/bulk";
         private readonly Dictionary<string, string> Headers = new Dictionary<string, string>();
 
-        public DocumentManager(Configuration config, string dataSetName) : base(config, Endpoint) {
+        public DocumentManager(Configuration config, string dataSetName) : base(config, Endpoint)
+        {
             Headers.Add(Constants.DataSetHeader, dataSetName);
         }
 
