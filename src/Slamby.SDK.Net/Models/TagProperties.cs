@@ -4,7 +4,7 @@ namespace Slamby.SDK.Net.Models
 {
     public class TagProperties
     {
-        public List<PathItem> Path { get; set; }
+        public List<PathItem> Path { get; set; } = new List<PathItem>();
         public int Level { get; set; }
         public bool IsLeaf { get; set; }
         public int DocumentCount { get; set; }
