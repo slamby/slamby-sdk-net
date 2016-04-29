@@ -11,5 +11,7 @@
         public const string ApiVersionHeader = "X-Api-Version";
 
         public const string SdkVersionHeader = "X-Sdk-Version";
+
+        public const string ApiParallelLimitHeader = "X-Api-Parallel-Limit";
     }
 }

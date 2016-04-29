@@ -8,8 +8,16 @@ namespace Slamby.SDK.Net.Models
 
         public static ErrorsModel Create(string error)
         {
-            var errorsModel = new ErrorsModel();
-            errorsModel.Errors =  new[] { error };
+            return Create(new[] { error });
+        }
+
+        public static ErrorsModel Create(IEnumerable<string> errors)
+        {
+            var errorsModel = new ErrorsModel()
+            {
+                Errors = errors
+            };
+
             return errorsModel;
         }
     }

@@ -41,10 +41,16 @@ namespace Slamby.SDK.Net
             {
                 client.BaseAddress = _configuration.ApiBaseEndpoint;
                 client.Timeout = _configuration.Timeout;
+
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.TryAddWithoutValidation(Constants.AuthorizationHeader, string.Format("{0} {1}", Constants.AuthorizationMethodSlamby, _configuration.ApiSecret));
                 client.DefaultRequestHeaders.TryAddWithoutValidation(Constants.SdkVersionHeader, GetType().GetTypeInfo().Assembly.GetName().Version.ToString());
+
+                if (_configuration.ParallelLimit > 0)
+                {
+                    client.DefaultRequestHeaders.TryAddWithoutValidation(Constants.ApiParallelLimitHeader, _configuration.ParallelLimit.ToString());
+                }
 
                 if (useGzip)
                 {
@@ -105,7 +111,6 @@ namespace Slamby.SDK.Net
                     IsSuccessFul = responseMsg.IsSuccessStatusCode,
                     ServerMessage = responseMsg.ReasonPhrase
                 };
-
 
                 var respString = await responseMsg.Content.ReadAsStringAsync();
 
