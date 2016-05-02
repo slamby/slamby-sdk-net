@@ -54,6 +54,7 @@
     <Compile Include="Managers\IDataSetManager.cs" />
     <Compile Include="Managers\IDocumentManager.cs" />
     <Compile Include="Managers\IProcessManager.cs" />
+    <Compile Include="Managers\StatusManager.cs" />
     <Compile Include="Managers\ProcessManager.cs" />
     <Compile Include="Managers\Services\ClassifierServiceManager.cs" />
     <Compile Include="Managers\Services\IClassifierServiceManager.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Models\DataSetStats.cs" />
     <Compile Include="Models\Enums\ProcessTypeEnum.cs" />
     <Compile Include="Models\Services\ExportDictionariesSettings.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Models\TagBulkSettings.cs" />
     <Compile Include="Models\DocumentBulkSettings.cs" />
     <Compile Include="Models\DocumentCopySettings.cs" />

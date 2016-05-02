@@ -1,4 +1,4 @@
-#Slamby SDK .NET
+#Slamby SDK .NET v0.14
 Slamby .NET SDK and Nuget Package.
 This project is open source. Please check the documentation and [join](http://www.slamby.com/Community) to the community group.
 
@@ -7,12 +7,8 @@ Github page:  [www.github.com/slamby/slamby-sdk-net](https://github.com/slamby/s
 
 ## Changelog
 ### Features
-- changes in Document Filter
-- new method in ProcessManager 
-- Prc Service
-- export words and occurences for tags in CSV
-- export dictionaries of classifier or prc services in CSV
-
+- added ParallelLimit property to Configuration
+- ability to limit numbers of thread used in certain functions
 
 ---
 
@@ -24,7 +20,7 @@ Configuration example:
 ```
 var configuration = new Configuration
 	{
-	    ApiBaseEndpoint = new Uri("https://api.slamby.com/CLIENT_ID/"),
+		ApiBaseEndpoint = new Uri("https://api.slamby.com/CLIENT_ID/"),
 		ApiSecret = "API_KEY"
 	};
 ```
@@ -33,6 +29,10 @@ You have to use this `configuration` object for every `Manager`.
 You can find more details about the Authentication [here](http://developers.slamby.com/api/#authentication)
 
 Slamby SDK.NET sends its version information to the API for version matching. Major and minor values should match in order to prevent version incompatibility. 
+
+`ParallelLimit` property enables you to limit or maximize CPU usage in certain functions. Limit value should be greater than zero in order to be sent.
+
+> **Note:** In some cases API can limit your value if your configuration cannot handle it efficiently
 
 ### Response Basics
 
@@ -83,7 +83,7 @@ Content:
 {"Id":"999","Name":"tag","ParentTagId":null,"Properties":null}
 ```
 
-###Async methods
+### Async methods
 
 In all the `Manager` class there are async methods. If you would like to use in a synchronized way, you can get the `Result` object of the task.
 
@@ -198,7 +198,7 @@ var result = await manager.GetDocumentAsync("DOCUMENT_ID");
 
 ### Get Document List
 
-Get a document from a dataset.
+Get document list from a dataset.
 
 _Example:_
 
@@ -229,6 +229,8 @@ var result = await manager.UpdateDocumentAsync("45", document);
 Copying documents from a dataset to another one. You can specify the documents by id. You can copy documents to an existing dataset.
 The selected documents will **remain in the source dataset** as well.
 
+> **Tip:** You can limit used thread count for this function in the configuration object
+
 _Example:_
 
 ```
@@ -248,6 +250,8 @@ var result = await manager.CopyDocumentsToAsync(settings);
 Moving documents from a dataset to another one. You can specify documents by id. You can move documents to an existing dataset. 
 The selected documents will be **removed from the source dataset**.
 
+> **Tip:** You can limit used thread count for this function in the configuration object
+
 _Example:_
 
 ```
@@ -263,11 +267,28 @@ var result = await manager.MoveDocumentsToAsync(settings);
 > **Tip:** You can use the `Documents/Sample` or the `Documents/Filter` methods to get document ids easily.
 
 
+### Bulk Documents
+
+Inserts mass documents to a dataset using the predefined schema.
+
+> **Tip:** You can limit used thread count for this function in the configuration object
+
+_Example:_
+
+```
+var settings = new DocumentBulkSettings()
+					{
+						Documents = myNewDocumentsList
+					};
+var manager = new DocumentManager(configuration, "DATASET_NAME");
+var result = await manager.BulkDocumentsAsync(settings);
+```
+
 ## Tags
 
 Manage tags to organize your data. Using tags create a tag cloud or a hierarchical tag tree.
 
-You can find more details about the Tags [here.](http://developers.slamby.com/api/#tags)
+You can find more details about the Tags [here](http://developers.slamby.com/api/#tags).
 
 ### Create New Tag
 
@@ -310,6 +331,8 @@ var result = await manager.GetTagsAsync();
 
 ### Update Tag
 
+Update a tag by new values.
+
 _Example:_
 
 ```
@@ -336,6 +359,23 @@ _Example:_
 ```
 var manager = new TagManager(configuration, "DATASET_NAME");
 var result = await manager.DeleteTagAsync("5");
+```
+
+### Bulk Tag
+
+Replaces existing tags with the provided list. Recommended for tag list initalizing.
+
+> **Tip:** You can limit used thread count for this function in the configuration object
+
+_Example:_
+
+```
+var settings = new TagBulkSettings()
+					{
+						Tags = myImportTagList
+					};
+var manager = new TagManager(configuration, "DATASET_NAME");
+var result = await manager.BulkTagsAsync(settings);
 ```
 
 ### Clean Documents
@@ -515,6 +555,7 @@ var deleteResponse = await serviceManager.DeleteServiceAsync(createdService.Id);
 ```
 
 ## Classifier Services
+
 Service for text classification. Create a classifier service from a selected dataset, specify your settings and use this service API endpoint to classify your incoming text.
 
 ### Get Classifier Service
@@ -527,6 +568,7 @@ var classifierServiceResponse = await classifierServiceManager.GetServiceAsync(s
 
 ### Prepare Classifier Service
 
+> **Tip:** You can limit used thread count for this function in the configuration object
 
 _Example:_
 ```
@@ -591,6 +633,7 @@ var resultProcess = (await classifierServiceManager.ExportDictionariesAsync(serv
 
 
 ## Prc Services
+
 Service for document recommendation. Create a prc service from a selected dataset, specify your settings and use this service API endpoint to get similar documents for your text.
 
 ### Get Prc Service
@@ -618,6 +661,8 @@ var process = prepareResponse.ResponseObject;
 
 
 ### Activate Prc Service
+
+> **Tip:** You can limit used thread count for this function in the configuration object
 
 _Example:_
 ```
@@ -657,7 +702,7 @@ var recommendResponse = (await prcServiceManager.RecommendServiceAsync(serviceId
 
 _Example:_
 ```
-var prcServiceManager = new prcServiceManager(_configuration);
+var prcServiceManager = new PrcServiceManager(_configuration);
 var settings = new ExportDictionariesSettings
     {
         TagIdList = new List<string> { "123", "44" }
@@ -665,3 +710,12 @@ var settings = new ExportDictionariesSettings
 var resultProcess = (await prcServiceManager.ExportDictionariesAsync(serviceId, settings));
 ```
 
+## Status
+
+Returns with version, processor, memory and disk information about the API server.
+
+_Example:_
+```
+var statusManager = new StatusManager(_configuration);
+var resultStatus = await statusManager.GetStatusAsync();
+```
