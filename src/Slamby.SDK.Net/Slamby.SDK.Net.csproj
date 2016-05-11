@@ -51,16 +51,17 @@
     <Compile Include="Managers\BaseManager.cs" />
     <Compile Include="Managers\DataSetManager.cs" />
     <Compile Include="Managers\DocumentManager.cs" />
-    <Compile Include="Managers\IDataSetManager.cs" />
-    <Compile Include="Managers\IDocumentManager.cs" />
-    <Compile Include="Managers\IProcessManager.cs" />
+    <Compile Include="Managers\Interfaces\IDataSetManager.cs" />
+    <Compile Include="Managers\Interfaces\IDocumentManager.cs" />
+    <Compile Include="Managers\Interfaces\IProcessManager.cs" />
+    <Compile Include="Managers\Interfaces\IStatusManager.cs" />
     <Compile Include="Managers\StatusManager.cs" />
     <Compile Include="Managers\ProcessManager.cs" />
     <Compile Include="Managers\Services\ClassifierServiceManager.cs" />
-    <Compile Include="Managers\Services\IClassifierServiceManager.cs" />
-    <Compile Include="Managers\Services\IPrcServiceManager.cs" />
-    <Compile Include="Managers\Services\IServiceManager.cs" />
-    <Compile Include="Managers\ITagManager.cs" />
+    <Compile Include="Managers\Interfaces\IClassifierServiceManager.cs" />
+    <Compile Include="Managers\Interfaces\IPrcServiceManager.cs" />
+    <Compile Include="Managers\Interfaces\IServiceManager.cs" />
+    <Compile Include="Managers\Interfaces\ITagManager.cs" />
     <Compile Include="Managers\Services\PrcServiceManager.cs" />
     <Compile Include="Managers\Services\ServiceManager.cs" />
     <Compile Include="Managers\TagManager.cs" />
@@ -110,7 +111,7 @@
     <Compile Include="Helpers\RawMessagePublisher.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="nuget\nuget.exe" />
+    <None Include="nuget\nuget.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,7 +1,8 @@
-﻿using Slamby.SDK.Net.Models;
-using Slamby.SDK.Net.Models.Services;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Slamby.SDK.Net.Managers.Interfaces;
+using Slamby.SDK.Net.Models;
+using Slamby.SDK.Net.Models.Services;
 
 namespace Slamby.SDK.Net.Managers
 {

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Slamby.SDK.Net.Managers.Interfaces;
 using Slamby.SDK.Net.Models;
 
 namespace Slamby.SDK.Net.Managers

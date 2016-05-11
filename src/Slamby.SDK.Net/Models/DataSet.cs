@@ -16,7 +16,7 @@ namespace Slamby.SDK.Net.Models
         [Required]
         public List<string> InterpretedFields { get; set; }
         public DataSetStats Statistics { get; set; }
-        [Required]
         public object SampleDocument { get; set; }
+        public object Schema { get; set; }
     }
 }

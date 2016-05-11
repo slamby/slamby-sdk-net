@@ -1,9 +1,10 @@
-﻿using Slamby.SDK.Net.Models;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Slamby.SDK.Net.Managers.Interfaces;
+using Slamby.SDK.Net.Models;
 
 namespace Slamby.SDK.Net.Managers
 {
-    public class StatusManager : BaseManager
+    public class StatusManager : BaseManager, IStatusManager
     {
         private static readonly string Endpoint = "api/status";
 
