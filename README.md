@@ -1,4 +1,4 @@
-# Slamby SDK .NET v0.14
+# Slamby SDK .NET v0.15
 Slamby .NET SDK and Nuget Package.
 This project is open source. Please check the documentation and [join](http://www.slamby.com/Community) to the community group.
 
@@ -7,8 +7,7 @@ Github page:  [www.github.com/slamby/slamby-sdk-net](https://github.com/slamby/s
 
 ## Changelog
 ### Features
-- added ParallelLimit property to Configuration
-- ability to limit numbers of thread used in certain functions
+- added `CreateDataSetSchemaAsync` endpoint call to `DataSetManager`
 
 ---
 
@@ -122,6 +121,50 @@ var dataset = new Models.DataSet
                 }
             }
 var response = await manager.CreateDataSetAsync(dataset);
+if (!response.IsSuccessFul)
+{
+	// handle error with the help of the Errors property in the response
+}
+```	
+
+Create a new dataset by providing a JSON schema and additional parameters.
+
+_Example:_
+
+```
+var manager = new DataSetManager(configuration);
+var dataset = new Models.DataSet
+            {
+                IdField = "id",
+                Name = "name",
+                NGramCount = 2,
+                InterpretedFields = new List<string> { "title", "desc" },
+                TagField = "tag",
+                Schema = new
+                {
+                    id = new 
+                    {
+                        type = "integer"
+                    },
+                    title = new 
+                    {
+                        type = "string"
+                    },
+                    desc =  new 
+                    {
+                        type = "string"
+                    },
+                    tag =  new 
+                    {
+                        type = "array",
+                        items = new 
+                        {
+                            type = "byte"    
+                        }
+                    }
+                }
+            }
+var response = await manager.CreateDataSchemaSetAsync(dataset);
 if (!response.IsSuccessFul)
 {
 	// handle error with the help of the Errors property in the response
