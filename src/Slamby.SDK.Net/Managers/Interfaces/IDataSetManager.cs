@@ -9,6 +9,7 @@ namespace Slamby.SDK.Net.Managers.Interfaces
         Task<ClientResponseWithObject<IEnumerable<DataSet>>> GetDataSetsAsync();
         Task<ClientResponseWithObject<DataSet>> GetDataSetAsync(string dataSetName);
         Task<ClientResponse> CreateDataSetAsync(DataSet dataSet);
+        Task<ClientResponse> CreateDataSetSchemaAsync(DataSet dataSet);
         Task<ClientResponse> DeleteDataSetAsync(string dataSetName);
     }
 }
