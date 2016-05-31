@@ -2,6 +2,9 @@
 
 namespace Slamby.SDK.Net.Models
 {
+    /// <summary>
+    /// Stores error messages
+    /// </summary>
     public class ErrorsModel
     {
         public IEnumerable<string> Errors { get; set; }
