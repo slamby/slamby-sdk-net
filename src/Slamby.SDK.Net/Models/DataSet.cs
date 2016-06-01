@@ -9,7 +9,7 @@ namespace Slamby.SDK.Net.Models
     public class DataSet
     {
         /// <summary>
-        /// Name of your dataset. Contains just A-Z letters and numbers without any space. After creating a dataset, you cannot modify it's name. This field is unique
+        /// Name of your dataset. Contains just A-Z letters and numbers without any space. This field is unique
         /// </summary>
         [Required]
         public string Name { get; set; }
