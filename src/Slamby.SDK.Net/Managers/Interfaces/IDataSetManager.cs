@@ -11,5 +11,6 @@ namespace Slamby.SDK.Net.Managers.Interfaces
         Task<ClientResponse> CreateDataSetAsync(DataSet dataSet);
         Task<ClientResponse> CreateDataSetSchemaAsync(DataSet dataSet);
         Task<ClientResponse> DeleteDataSetAsync(string dataSetName);
+        Task<ClientResponse> UpdateDataSetAsync(string dataSetName, DataSetUpdate dataSetUpdate);
     }
 }
