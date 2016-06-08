@@ -32,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Slamby.SDK.Net.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <None Include="project.json" />
@@ -67,6 +68,7 @@
     <Compile Include="Managers\TagManager.cs" />
     <Compile Include="Models\BulkResult.cs" />
     <Compile Include="Models\ClientResponse.cs" />
+    <Compile Include="Models\DataSetUpdate.cs" />
     <Compile Include="Models\DataSet.cs" />
     <Compile Include="Models\DataSetStats.cs" />
     <Compile Include="Models\Enums\ProcessTypeEnum.cs" />

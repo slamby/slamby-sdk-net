@@ -1,5 +1,8 @@
 ﻿namespace Slamby.SDK.Net.Models
 {
+    /// <summary>
+    /// Status object
+    /// </summary>
     public class Status
     {
         /// <summary>

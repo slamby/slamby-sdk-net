@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Slamby.SDK.Net.Models.Services
+﻿namespace Slamby.SDK.Net.Models.Services
 {
+    /// <summary>
+    /// For the common properties detail check the [Service](#/definitions/Service)
+    /// </summary>
     public class ClassifierService : Service
     {
         public ClassifierPrepareSettings PrepareSettings { get; set; }

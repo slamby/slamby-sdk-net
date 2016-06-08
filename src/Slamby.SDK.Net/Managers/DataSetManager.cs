@@ -37,5 +37,10 @@ namespace Slamby.SDK.Net.Managers
         {
             return await _client.SendAsync<IEnumerable<DataSet>>(System.Net.Http.HttpMethod.Get, null, null, null, null);
         }
+
+        public async Task<ClientResponse> UpdateDataSetAsync(string dataSetName, DataSetUpdate dataSetUpdate)
+        {
+            return await _client.SendAsync(System.Net.Http.HttpMethod.Put, dataSetUpdate, dataSetName, null, null);
+        }
     }
 }
