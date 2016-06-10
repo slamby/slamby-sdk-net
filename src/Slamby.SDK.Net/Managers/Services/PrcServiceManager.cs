@@ -52,7 +52,7 @@ namespace Slamby.SDK.Net.Managers
             return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, settings, $"{serviceId}/{ExportDictionariesEndpointSuffix}", null, null);
         }
 
-        public async Task<ClientResponseWithObject<IEnumerable<PrcKeywordsResult>>> KeywordsServiceAsync(string serviceId, PrcKeywordsRequest prcKeywordsRequest, bool isStrict)
+        public async Task<ClientResponseWithObject<IEnumerable<PrcKeywordsResult>>> KeywordsServiceAsync(string serviceId, PrcKeywordsRequest prcKeywordsRequest, bool isStrict = false)
         {
             var queryParameters = new Dictionary<string, string>
             {
