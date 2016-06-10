@@ -14,6 +14,7 @@ namespace Slamby.SDK.Net.Managers
         private static readonly string DeactivateEndpointSuffix = "/deactivate";
         private static readonly string RecommendEndpointSuffix = "/recommend";
         private static readonly string ExportDictionariesEndpointSuffix = "/exportdictionaries";
+        private static readonly string KeywordsEndpointSuffix = "/keywords";
 
         public PrcServiceManager(Configuration config) 
             : base(config, Endpoint)
@@ -49,6 +50,15 @@ namespace Slamby.SDK.Net.Managers
         public async Task<ClientResponseWithObject<Process>> ExportDictionariesAsync(string serviceId, ExportDictionariesSettings settings)
         {
             return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, settings, $"{serviceId}/{ExportDictionariesEndpointSuffix}", null, null);
+        }
+
+        public async Task<ClientResponseWithObject<IEnumerable<PrcKeywordsResult>>> KeywordsServiceAsync(string serviceId, PrcKeywordsRequest prcKeywordsRequest, bool isStrict)
+        {
+            var queryParameters = new Dictionary<string, string>
+            {
+                ["isStrict"] = isStrict.ToString(),
+            };
+            return await _client.SendAsync<IEnumerable<PrcKeywordsResult>>(System.Net.Http.HttpMethod.Post, prcKeywordsRequest, $"{serviceId}/{KeywordsEndpointSuffix}", queryParameters, null);
         }
     }
 }
