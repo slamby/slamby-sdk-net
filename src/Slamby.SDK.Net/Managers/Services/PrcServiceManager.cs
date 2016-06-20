@@ -42,7 +42,7 @@ namespace Slamby.SDK.Net.Managers
             return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, null, $"{serviceId}/{DeactivateEndpointSuffix}", null, null);
         }
 
-        public async Task<ClientResponseWithObject<IEnumerable<PrcRecommendationResult>>> RecommendServiceAsync(string serviceId, PrcRecommendationRequest prcRecommendationRequest)
+        public async Task<ClientResponseWithObject<IEnumerable<PrcRecommendationResult>>> RecommendAsync(string serviceId, PrcRecommendationRequest prcRecommendationRequest)
         {
             return await _client.SendAsync<IEnumerable<PrcRecommendationResult>>(System.Net.Http.HttpMethod.Post, prcRecommendationRequest, $"{serviceId}/{RecommendEndpointSuffix}", null, null);
         }
@@ -52,7 +52,7 @@ namespace Slamby.SDK.Net.Managers
             return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, settings, $"{serviceId}/{ExportDictionariesEndpointSuffix}", null, null);
         }
 
-        public async Task<ClientResponseWithObject<IEnumerable<PrcKeywordsResult>>> KeywordsServiceAsync(string serviceId, PrcKeywordsRequest prcKeywordsRequest, bool isStrict = false)
+        public async Task<ClientResponseWithObject<IEnumerable<PrcKeywordsResult>>> KeywordsAsync(string serviceId, PrcKeywordsRequest prcKeywordsRequest, bool isStrict = false)
         {
             var queryParameters = new Dictionary<string, string>
             {
