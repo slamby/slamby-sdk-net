@@ -41,7 +41,7 @@ namespace Slamby.SDK.Net.Managers
             return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, null, $"{serviceId}/{DeactivateEndpointSuffix}", null, null);
         }
 
-        public async Task<ClientResponseWithObject<IEnumerable<ClassifierRecommendationResult>>> RecommendServiceAsync(string serviceId, ClassifierRecommendationRequest classifierRecommendationRequest)
+        public async Task<ClientResponseWithObject<IEnumerable<ClassifierRecommendationResult>>> RecommendAsync(string serviceId, ClassifierRecommendationRequest classifierRecommendationRequest)
         {
             return await _client.SendAsync<IEnumerable<ClassifierRecommendationResult>>(System.Net.Http.HttpMethod.Post, classifierRecommendationRequest, $"{serviceId}/{RecommendEndpointSuffix}", null, null);
         }

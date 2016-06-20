@@ -15,8 +15,10 @@ namespace Slamby.SDK.Net.Managers.Interfaces
 
         Task<ClientResponse> DeactivateServiceAsync(string serviceId);
 
-        Task<ClientResponseWithObject<IEnumerable<PrcRecommendationResult>>> RecommendServiceAsync(string serviceId, PrcRecommendationRequest prcRecommendationRequest);
+        Task<ClientResponseWithObject<IEnumerable<PrcRecommendationResult>>> RecommendAsync(string serviceId, PrcRecommendationRequest prcRecommendationRequest);
 
         Task<ClientResponseWithObject<Process>> ExportDictionariesAsync(string serviceId, ExportDictionariesSettings settings);
+
+        Task<ClientResponseWithObject<IEnumerable<PrcKeywordsResult>>> KeywordsAsync(string serviceId, PrcKeywordsRequest prcKeywordsRequest, bool isStrict);
     }
 }

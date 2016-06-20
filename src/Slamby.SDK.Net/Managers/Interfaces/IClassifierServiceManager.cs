@@ -15,7 +15,7 @@ namespace Slamby.SDK.Net.Managers.Interfaces
 
         Task<ClientResponse> DeactivateServiceAsync(string serviceId);
 
-        Task<ClientResponseWithObject<IEnumerable<ClassifierRecommendationResult>>> RecommendServiceAsync(string serviceId, ClassifierRecommendationRequest classifierRecommendationRequest);
+        Task<ClientResponseWithObject<IEnumerable<ClassifierRecommendationResult>>> RecommendAsync(string serviceId, ClassifierRecommendationRequest classifierRecommendationRequest);
 
         Task<ClientResponseWithObject<Process>> ExportDictionariesAsync(string serviceId, ExportDictionariesSettings settings);
     }

@@ -13,5 +13,10 @@
         public double Score { get; set; }
 
         public Tag Tag { get; set; }
+
+        /// <summary>
+        /// If there was applied emphasizing by this tag
+        /// </summary>
+        public bool IsEmphasized { get; set; }
     }
 }
