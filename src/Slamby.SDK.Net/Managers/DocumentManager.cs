@@ -36,9 +36,9 @@ namespace Slamby.SDK.Net.Managers
             return await _client.SendAsync(System.Net.Http.HttpMethod.Delete, null, documentId, null, Headers);
         }
 
-        public async Task<ClientResponseWithObject<object>> GetDocumentAsync(string documentId)
+        public async Task<ClientResponseWithObject<object>> GetDocumentAsync(string documentId, DocumentGetSettings getSettings = null)
         {
-            return await _client.SendAsync<object>(System.Net.Http.HttpMethod.Get, null, documentId, null, Headers);
+            return await _client.SendAsync<object>(System.Net.Http.HttpMethod.Get, getSettings, documentId, null, Headers);
         }
 
         public async Task<ClientResponseWithObject<PaginatedList<object>>> GetSampleDocumentsAsync(DocumentSampleSettings sampleSettings)

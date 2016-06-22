@@ -8,7 +8,7 @@ namespace Slamby.SDK.Net.Managers.Interfaces
         Task<ClientResponseWithObject<PaginatedList<object>>> GetSampleDocumentsAsync(DocumentSampleSettings sampleSettings);
         Task<ClientResponseWithObject<PaginatedList<object>>> GetFilteredDocumentsAsync(DocumentFilterSettings filterSettings);
 
-        Task<ClientResponseWithObject<object>> GetDocumentAsync(string documentId);
+        Task<ClientResponseWithObject<object>> GetDocumentAsync(string documentId, DocumentGetSettings getSettings);
         Task<ClientResponse> CreateDocumentAsync(object document);
         Task<ClientResponse> UpdateDocumentAsync(string documentId, object document);
         Task<ClientResponse> DeleteDocumentAsync(string documentId);

@@ -45,8 +45,8 @@ namespace Slamby.SDK.Net.Models
         public int Size { get; set; }
 
         /// <summary>
-        /// Query returns only with Id field values
+        /// Query returns only with the specified field(s)
         /// </summary>
-        public bool IdsOnly { get; set; }
+        public FieldFilter FieldFilter { get; set; }
     }
 }
