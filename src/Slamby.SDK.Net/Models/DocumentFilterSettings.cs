@@ -7,6 +7,8 @@ namespace Slamby.SDK.Net.Models
         [Required]
         public Pagination Pagination { get; set; }
 
+        public Order Order { get; set; }
+
         public Filter Filter { get; set; }
 
         /// <summary>

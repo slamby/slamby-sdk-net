@@ -5,8 +5,8 @@ namespace Slamby.SDK.Net.Managers.Interfaces
 {
     public interface IDocumentManager
     {
-        Task<ClientResponseWithObject<PaginatedList<object>>> GetSampleDocumentsAsync(DocumentSampleSettings sampleSettings);
-        Task<ClientResponseWithObject<PaginatedList<object>>> GetFilteredDocumentsAsync(DocumentFilterSettings filterSettings);
+        Task<ClientResponseWithObject<PaginatedList<object>>> GetSampleDocumentsAsync(DocumentSampleSettings sampleSettings, string scrollId);
+        Task<ClientResponseWithObject<PaginatedList<object>>> GetFilteredDocumentsAsync(DocumentFilterSettings filterSettings, string scrollId);
 
         Task<ClientResponseWithObject<object>> GetDocumentAsync(string documentId);
         Task<ClientResponse> CreateDocumentAsync(object document);

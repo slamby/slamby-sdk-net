@@ -41,16 +41,24 @@ namespace Slamby.SDK.Net.Managers
             return await _client.SendAsync<object>(System.Net.Http.HttpMethod.Get, null, documentId, null, Headers);
         }
 
-        public async Task<ClientResponseWithObject<PaginatedList<object>>> GetSampleDocumentsAsync(DocumentSampleSettings sampleSettings)
+        public async Task<ClientResponseWithObject<PaginatedList<object>>> GetSampleDocumentsAsync(DocumentSampleSettings sampleSettings, string scrollId)
         {
             var client = new ApiClient(_configuration, SampleEndpoint);
-            return await client.SendAsync<PaginatedList<object>>(System.Net.Http.HttpMethod.Post, sampleSettings, null, null, Headers, true);
+            var queryParameters = new Dictionary<string, string>
+            {
+                ["scrollId"] = scrollId
+            };
+            return await client.SendAsync<PaginatedList<object>>(System.Net.Http.HttpMethod.Post, sampleSettings, null, queryParameters, Headers, true);
         }
 
-        public async Task<ClientResponseWithObject<PaginatedList<object>>> GetFilteredDocumentsAsync(DocumentFilterSettings filterSettings)
+        public async Task<ClientResponseWithObject<PaginatedList<object>>> GetFilteredDocumentsAsync(DocumentFilterSettings filterSettings, string scrollId)
         {
             var client = new ApiClient(_configuration, FilterEndpoint);
-            return await client.SendAsync<PaginatedList<object>>(System.Net.Http.HttpMethod.Post, filterSettings, null, null, Headers, true);
+            var queryParameters = new Dictionary<string, string>
+            {
+                ["scrollId"] = scrollId
+            };
+            return await client.SendAsync<PaginatedList<object>>(System.Net.Http.HttpMethod.Post, filterSettings, null, queryParameters, Headers, true);
         }
 
         public async Task<ClientResponse> MoveDocumentsToAsync(DocumentMoveSettings settings)

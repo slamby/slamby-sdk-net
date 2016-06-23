@@ -73,6 +73,7 @@
     <Compile Include="Models\DataSetStats.cs" />
     <Compile Include="Models\Enums\ProcessTypeEnum.cs" />
     <Compile Include="Models\FieldFilter.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Services\ExportDictionariesSettings.cs" />
     <Compile Include="Models\Services\Prc\PrcKeywordsRequest.cs" />
     <Compile Include="Models\Services\Prc\PrcKeywordsResult.cs" />
