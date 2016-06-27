@@ -23,5 +23,10 @@ namespace Slamby.SDK.Net.Models
         /// The count of all items which are the pagination applied
         /// </summary>
         public int Total { get; set; }
+
+        /// <summary>
+        /// Identifier for the next series of items where it is applicable
+        /// </summary>
+        public string ScrollId { get; set; }
     }
 }
