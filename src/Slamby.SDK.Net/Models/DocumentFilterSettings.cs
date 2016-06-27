@@ -8,11 +8,6 @@ namespace Slamby.SDK.Net.Models
         [Required]
         public Pagination Pagination { get; set; }
 
-        /// <summary>
-        /// Identifier for the next series of items
-        /// </summary>
-        public string ScrollId { get; set; }
-
         public Order Order { get; set; }
 
         public Filter Filter { get; set; }

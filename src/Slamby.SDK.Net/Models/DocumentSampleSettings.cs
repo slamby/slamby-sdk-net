@@ -25,12 +25,6 @@ namespace Slamby.SDK.Net.Models
         public bool IsStratified { get; set; }
 
         /// <summary>
-        /// Pagination object
-        /// </summary>
-        [Required]
-        public Pagination Pagination { get; set; }
-
-        /// <summary>
         /// Defining the sample size, you can use percentage or a given number. 
         /// Using a percentage you can define the document number by a percentage. 
         /// This percentage will calculate the document number by using the available dataset document number. 
