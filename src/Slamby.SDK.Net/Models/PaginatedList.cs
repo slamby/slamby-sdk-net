@@ -10,11 +10,6 @@ namespace Slamby.SDK.Net.Models
         public IEnumerable<T> Items { get; set; }
 
         /// <summary>
-        /// Pagination object
-        /// </summary>
-        public Pagination Pagination { get; set; }
-
-        /// <summary>
         /// The count of the actual returned items
         /// </summary>
         public int Count { get; set; }
