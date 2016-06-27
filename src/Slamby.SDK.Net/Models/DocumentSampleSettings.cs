@@ -47,6 +47,6 @@ namespace Slamby.SDK.Net.Models
         /// <summary>
         /// Query returns only with the specified field(s)
         /// </summary>
-        public FieldFilter FieldFilter { get; set; }
+        public List<string> Fields { get; set; } = new List<string>();
     }
 }
