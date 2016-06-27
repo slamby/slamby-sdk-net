@@ -6,6 +6,8 @@
         PrcPrepare,
         ClassifierExportDictionaries,
         PrcExportDictionaries,
-        TagsExportWords
+        TagsExportWords,
+        ClassifierActivate,
+        PrcActivate
     }
 }
