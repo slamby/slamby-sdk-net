@@ -41,14 +41,10 @@ namespace Slamby.SDK.Net.Managers
             return await _client.SendAsync<object>(System.Net.Http.HttpMethod.Get, null, documentId, null, Headers);
         }
 
-        public async Task<ClientResponseWithObject<PaginatedList<object>>> GetSampleDocumentsAsync(DocumentSampleSettings sampleSettings, string scrollId)
+        public async Task<ClientResponseWithObject<PaginatedList<object>>> GetSampleDocumentsAsync(DocumentSampleSettings sampleSettings)
         {
             var client = new ApiClient(_configuration, SampleEndpoint);
-            var queryParameters = new Dictionary<string, string>
-            {
-                ["scrollId"] = scrollId
-            };
-            return await client.SendAsync<PaginatedList<object>>(System.Net.Http.HttpMethod.Post, sampleSettings, null, queryParameters, Headers, true);
+            return await client.SendAsync<PaginatedList<object>>(System.Net.Http.HttpMethod.Post, sampleSettings, null, null, Headers, true);
         }
 
         public async Task<ClientResponseWithObject<PaginatedList<object>>> GetFilteredDocumentsAsync(DocumentFilterSettings filterSettings, string scrollId)
