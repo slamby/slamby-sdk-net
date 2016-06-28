@@ -11,7 +11,7 @@ namespace Slamby.SDK.Net.Managers.Interfaces
 
         Task<ClientResponseWithObject<Process>> PrepareServiceAsync(string serviceId, ClassifierPrepareSettings classifierPrepareSettings);
 
-        Task<ClientResponse> ActivateServiceAsync(string serviceId, ClassifierActivateSettings classifierActivateSettings);
+        Task<ClientResponseWithObject<Process>> ActivateServiceAsync(string serviceId, ClassifierActivateSettings classifierActivateSettings);
 
         Task<ClientResponse> DeactivateServiceAsync(string serviceId);
 
