@@ -50,11 +50,7 @@ namespace Slamby.SDK.Net.Managers
         public async Task<ClientResponseWithObject<PaginatedList<object>>> GetFilteredDocumentsAsync(DocumentFilterSettings filterSettings, string scrollId)
         {
             var client = new ApiClient(_configuration, FilterEndpoint);
-            var queryParameters = new Dictionary<string, string>
-            {
-                ["scrollId"] = scrollId
-            };
-            return await client.SendAsync<PaginatedList<object>>(System.Net.Http.HttpMethod.Post, filterSettings, null, queryParameters, Headers, true);
+            return await client.SendAsync<PaginatedList<object>>(System.Net.Http.HttpMethod.Post, filterSettings, scrollId, null, Headers, true);
         }
 
         public async Task<ClientResponse> MoveDocumentsToAsync(DocumentMoveSettings settings)
