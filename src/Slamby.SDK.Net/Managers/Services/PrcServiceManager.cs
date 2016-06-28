@@ -32,7 +32,7 @@ namespace Slamby.SDK.Net.Managers
             return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, prcPrepareSettings, $"{serviceId}/{PrepareEndpointSuffix}", null, null);
         }
 
-        public async Task<ClientResponse> ActivateServiceAsync(string serviceId, PrcActivateSettings prcActivateSettings)
+        public async Task<ClientResponseWithObject<Process>> ActivateServiceAsync(string serviceId, PrcActivateSettings prcActivateSettings)
         {
             return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, prcActivateSettings, $"{serviceId}/{ActivateEndpointSuffix}", null, null);
         }
