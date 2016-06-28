@@ -78,7 +78,7 @@ namespace Slamby.SDK.Net
                 }
                 else
                 {
-                    content = new ByteArrayContent(new byte[0]);
+                    content = new StringContent(string.Empty, Encoding.UTF8, "application/json");
                 }
 
                 HttpResponseMessage responseMsg = null;
