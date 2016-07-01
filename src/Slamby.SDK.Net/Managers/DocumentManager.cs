@@ -65,9 +65,9 @@ namespace Slamby.SDK.Net.Managers
             return await client.SendAsync(System.Net.Http.HttpMethod.Post, settings, null, null, Headers);
         }
 
-        public async Task<ClientResponse> UpdateDocumentAsync(string documentId, object document)
+        public async Task<ClientResponseWithObject<object>> UpdateDocumentAsync(string documentId, object document)
         {
-            return await _client.SendAsync(System.Net.Http.HttpMethod.Put, document, documentId, null, Headers);
+            return await _client.SendAsync<object>(System.Net.Http.HttpMethod.Put, document, documentId, null, Headers);
         }
 
         public async Task<ClientResponseWithObject<BulkResults>> BulkDocumentsAsync(DocumentBulkSettings settings)
