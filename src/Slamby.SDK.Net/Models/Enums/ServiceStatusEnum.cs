@@ -5,6 +5,7 @@
         New,
         Busy,
         Prepared,
-        Active
+        Active,
+        Cancelling
     }
 }
