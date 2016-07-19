@@ -7,6 +7,7 @@
         Finished,
         Error,
         Interrupted,
-        Paused
+        Paused,
+        Cancelling
     }
 }

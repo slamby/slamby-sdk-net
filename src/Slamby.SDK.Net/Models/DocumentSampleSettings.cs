@@ -25,12 +25,6 @@ namespace Slamby.SDK.Net.Models
         public bool IsStratified { get; set; }
 
         /// <summary>
-        /// Pagination object
-        /// </summary>
-        [Required]
-        public Pagination Pagination { get; set; }
-
-        /// <summary>
         /// Defining the sample size, you can use percentage or a given number. 
         /// Using a percentage you can define the document number by a percentage. 
         /// This percentage will calculate the document number by using the available dataset document number. 
@@ -45,8 +39,8 @@ namespace Slamby.SDK.Net.Models
         public int Size { get; set; }
 
         /// <summary>
-        /// Query returns only with Id field values
+        /// Query returns only with the specified field(s)
         /// </summary>
-        public bool IdsOnly { get; set; }
+        public List<string> Fields { get; set; } = new List<string>();
     }
 }

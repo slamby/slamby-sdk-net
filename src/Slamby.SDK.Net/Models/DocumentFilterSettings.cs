@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Slamby.SDK.Net.Models
 {
@@ -7,11 +8,13 @@ namespace Slamby.SDK.Net.Models
         [Required]
         public Pagination Pagination { get; set; }
 
-        /// <summary>
-        /// Query returns only with Id field values
-        /// </summary>
-        public bool IdsOnly { get; set; }
+        public Order Order { get; set; }
 
         public Filter Filter { get; set; }
+
+        /// <summary>
+        /// Query returns only with the specified field(s)
+        /// </summary>
+        public List<string> Fields { get; set; } = new List<string>();
     }
 }

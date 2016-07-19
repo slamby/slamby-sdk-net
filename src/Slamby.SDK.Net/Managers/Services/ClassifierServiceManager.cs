@@ -31,7 +31,7 @@ namespace Slamby.SDK.Net.Managers
             return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, classifierPrepareSettings, $"{serviceId}/{PrepareEndpointSuffix}", null, null);
         }
 
-        public async Task<ClientResponse> ActivateServiceAsync(string serviceId, ClassifierActivateSettings classifierActivateSettings)
+        public async Task<ClientResponseWithObject<Process>> ActivateServiceAsync(string serviceId, ClassifierActivateSettings classifierActivateSettings)
         {
             return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, classifierActivateSettings, $"{serviceId}/{ActivateEndpointSuffix}", null, null);
         }
