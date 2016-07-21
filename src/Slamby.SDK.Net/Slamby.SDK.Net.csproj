@@ -78,6 +78,7 @@
     <Compile Include="Models\FileParserResult.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Services\ExportDictionariesSettings.cs" />
+    <Compile Include="Models\Services\Prc\PrcIndexSettings.cs" />
     <Compile Include="Models\Services\Prc\PrcKeywordsRequest.cs" />
     <Compile Include="Models\Services\Prc\PrcKeywordsResult.cs" />
     <Compile Include="Models\Status.cs" />
