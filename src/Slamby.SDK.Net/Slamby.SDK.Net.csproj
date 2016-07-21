@@ -52,10 +52,12 @@
     <Compile Include="Managers\BaseManager.cs" />
     <Compile Include="Managers\DataSetManager.cs" />
     <Compile Include="Managers\DocumentManager.cs" />
+    <Compile Include="Managers\Interfaces\IHelperManager.cs" />
     <Compile Include="Managers\Interfaces\IDataSetManager.cs" />
     <Compile Include="Managers\Interfaces\IDocumentManager.cs" />
     <Compile Include="Managers\Interfaces\IProcessManager.cs" />
     <Compile Include="Managers\Interfaces\IStatusManager.cs" />
+    <Compile Include="Managers\HelperManager.cs" />
     <Compile Include="Managers\StatusManager.cs" />
     <Compile Include="Managers\ProcessManager.cs" />
     <Compile Include="Managers\Services\ClassifierServiceManager.cs" />
