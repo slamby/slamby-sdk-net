@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -128,8 +129,10 @@ namespace Slamby.SDK.Net
                         }
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
+                    Debug.WriteLine(ex.Message);
+
                     clientResponse.IsSuccessFul = false;
                     clientResponse.Errors = ErrorsModel.Create("Response is not a valid JSON:\n" + respString);
                 }
