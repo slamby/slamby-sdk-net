@@ -9,6 +9,7 @@
         TagsExportWords,
         ClassifierActivate,
         PrcActivate,
-        PrcIndex
+        PrcIndex,
+        PrcIndexPartial,
     }
 }
