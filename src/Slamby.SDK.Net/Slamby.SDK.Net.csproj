@@ -73,10 +73,12 @@
     <Compile Include="Models\DataSetUpdate.cs" />
     <Compile Include="Models\DataSet.cs" />
     <Compile Include="Models\DataSetStats.cs" />
+    <Compile Include="Models\Enums\LogicalOperatorEnum.cs" />
     <Compile Include="Models\Enums\ProcessTypeEnum.cs" />
     <Compile Include="Models\FileParser.cs" />
     <Compile Include="Models\FileParserResult.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Services\CompressSettings.cs" />
     <Compile Include="Models\Services\ExportDictionariesSettings.cs" />
     <Compile Include="Models\Services\Prc\PrcIndexSettings.cs" />
     <Compile Include="Models\Services\Prc\PrcKeywordsRequest.cs" />

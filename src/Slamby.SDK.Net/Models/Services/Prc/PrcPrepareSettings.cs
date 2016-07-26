@@ -9,5 +9,16 @@ namespace Slamby.SDK.Net.Models.Services
         public string DataSetName { get; set; }
 
         public List<string> TagIdList { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int CompressLevel { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CompressSettings CompressSettings { get; set; }
+
     }
 }

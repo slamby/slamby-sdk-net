@@ -24,5 +24,16 @@ namespace Slamby.SDK.Net.Models.Services
         /// </summary>
         [Required]
         public List<int> NGramList { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int CompressLevel { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CompressSettings CompressSettings { get; set; }
+
     }
 }
