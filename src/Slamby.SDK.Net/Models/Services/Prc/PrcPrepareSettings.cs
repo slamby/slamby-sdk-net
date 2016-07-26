@@ -13,6 +13,7 @@ namespace Slamby.SDK.Net.Models.Services
         /// <summary>
         /// 
         /// </summary>
+        [Range(0, 2)]
         public int CompressLevel { get; set; }
 
         /// <summary>
