@@ -83,6 +83,8 @@
     <Compile Include="Models\Services\Prc\PrcIndexSettings.cs" />
     <Compile Include="Models\Services\Prc\PrcKeywordsRequest.cs" />
     <Compile Include="Models\Services\Prc\PrcKeywordsResult.cs" />
+    <Compile Include="Models\Services\Prc\PrcRecommendationBaseRequest.cs" />
+    <Compile Include="Models\Services\Prc\PrcRecommendationByIdRequest.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\TagBulkSettings.cs" />
     <Compile Include="Models\DocumentBulkSettings.cs" />

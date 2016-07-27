@@ -2,9 +2,9 @@
 
 namespace Slamby.SDK.Net.Models.Services
 {
-    public class PrcRecommendationRequest : PrcRecommendationBaseRequest
+    public class PrcRecommendationByIdRequest : PrcRecommendationBaseRequest
     {
         [Required]
-        public string Text { get; set; }
+        public string DocumentId { get; set; }
     }
 }
