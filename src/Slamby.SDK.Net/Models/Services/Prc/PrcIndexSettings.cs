@@ -1,4 +1,4 @@
-﻿namespace Slamby.SDK.Net.Models.Services.Prc
+﻿namespace Slamby.SDK.Net.Models.Services
 {
     public class PrcIndexSettings
     {
