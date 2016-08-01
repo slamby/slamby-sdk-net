@@ -4,7 +4,28 @@ namespace Slamby.SDK.Net
 {
     public class Configuration
     {
-        public Uri ApiBaseEndpoint { get; set; }
+        private Uri apiBaseEndpoint;
+
+        public Uri ApiBaseEndpoint
+        {
+            get
+            {
+                return apiBaseEndpoint;
+            }
+
+            set
+            {
+                // make sure ends with "/"
+                if (!value.OriginalString.EndsWith("/"))
+                {
+                    apiBaseEndpoint = new Uri(value.OriginalString + "/");
+                }
+                else
+                {
+                    apiBaseEndpoint = value;
+                }
+            }
+        }
 
         public string ApiSecret { get; set; }
 
