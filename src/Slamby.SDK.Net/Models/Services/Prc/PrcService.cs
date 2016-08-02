@@ -5,5 +5,7 @@
         public PrcPrepareSettings PrepareSettings { get; set; }
 
         public PrcActivateSettings ActivateSettings { get; set; }
+
+        public PrcIndexSettings IndexSettings { get; set; }
     }
 }
