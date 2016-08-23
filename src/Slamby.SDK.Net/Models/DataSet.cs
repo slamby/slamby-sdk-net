@@ -28,7 +28,7 @@ namespace Slamby.SDK.Net.Models
         /// </summary>
         [Required]
         [RegularExpression(Constants.ValidationCommonRegex)]
-        [StringLength(Constants.ValidationCommonMaximumLength, MinimumLength = Constants.ValidationCommonMinimumLength)]
+        [StringLength(Constants.ValidationCommonMaximumLength, MinimumLength = 1)]
         public string IdField { get; set; }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Slamby.SDK.Net.Models
         /// </summary>
         [Required]
         [RegularExpression(Constants.ValidationCommonRegex)]
-        [StringLength(Constants.ValidationCommonMaximumLength, MinimumLength = Constants.ValidationCommonMinimumLength)]
+        [StringLength(Constants.ValidationCommonMaximumLength, MinimumLength = 1)]
         public string TagField { get; set; }
 
         /// <summary>
