@@ -8,12 +8,12 @@ namespace Slamby.SDK.Net.Models
     /// </summary>
     public class DataSet
     {
-        public const string CommonRegex = "([a-zA-Z0-9-_]+)";
         /// <summary>
         /// Name of your dataset. Can contains just A-Z letters, numbers, _ (underscore) and - (hyphen) without any space. This field is unique
         /// </summary>
         [Required]
-        [RegularExpression(CommonRegex)]
+        [RegularExpression(Constants.ValidationCommonRegex)]
+        [StringLength(Constants.ValidationCommonMaximumLength, MinimumLength = Constants.ValidationCommonMinimumLength)]
         public string Name { get; set; }
 
         /// <summary>
@@ -27,14 +27,16 @@ namespace Slamby.SDK.Net.Models
         /// To identify a document you need to use IDs. You can use your own conventions to name your ID field, but in the settings you need to provide the field name of the id field from your sample document. Can contains just A-Z letters, numbers, _ (underscore) and - (hyphen) without any space
         /// </summary>
         [Required]
-        [RegularExpression(CommonRegex)]
+        [RegularExpression(Constants.ValidationCommonRegex)]
+        [StringLength(Constants.ValidationCommonMaximumLength, MinimumLength = Constants.ValidationCommonMinimumLength)]
         public string IdField { get; set; }
 
         /// <summary>
         /// For text categorization we provide a predefined document field to store your tags (or categories). If your documents are related to tags or categories, please insert here the tags field name from your sample JSON. Can contains just A-Z letters, numbers, _ (underscore) and - (hyphen) without any space
         /// </summary>
         [Required]
-        [RegularExpression(CommonRegex)]
+        [RegularExpression(Constants.ValidationCommonRegex)]
+        [StringLength(Constants.ValidationCommonMaximumLength, MinimumLength = Constants.ValidationCommonMinimumLength)]
         public string TagField { get; set; }
 
         /// <summary>

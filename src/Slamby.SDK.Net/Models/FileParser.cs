@@ -1,4 +1,6 @@
-﻿namespace Slamby.SDK.Net.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Slamby.SDK.Net.Models
 {
     /// <summary>
     /// File parser request
@@ -8,6 +10,7 @@
         /// <summary>
         /// Valid base64 document content
         /// </summary>
+        [Required]
         public string Content { get; set; }
     }
 }

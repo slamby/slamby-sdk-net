@@ -20,16 +20,12 @@ namespace Slamby.SDK.Net.Models
         public List<string> TagIds { get; set; }
 
         /// <summary>
-        /// You can use stratified sampling. In this case the sampling will be created by tags. For general sampling don't use stratified sampling
-        /// </summary>
-        public bool IsStratified { get; set; }
-
-        /// <summary>
         /// Defining the sample size, you can use percentage or a given number. 
         /// Using a percentage you can define the document number by a percentage. 
         /// This percentage will calculate the document number by using the available dataset document number. 
         /// E.g.: if your dataset contains 100.000 documents and you are using 10% as a sampling size without stratified method, your sample size is 100.000 x 10% = 10.000
         /// </summary>
+        [Range(0.0,100.0)]
         public double Percent { get; set; }
 
         /// <summary>

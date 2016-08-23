@@ -15,6 +15,8 @@ namespace Slamby.SDK.Net.Models
         /// The DataSet name where you want to move the selected documents
         /// </summary>
         [Required]
+        [RegularExpression(Constants.ValidationCommonRegex)]
+        [StringLength(Constants.ValidationCommonMaximumLength, MinimumLength = Constants.ValidationCommonMinimumLength)]
         public string TargetDataSetName { get; set; }
     }
 }

@@ -13,5 +13,9 @@
         public const string SdkVersionHeader = "X-Sdk-Version";
 
         public const string ApiParallelLimitHeader = "X-Api-Parallel-Limit";
+
+        public const string ValidationCommonRegex = "([a-zA-Z0-9-_]+)";
+        public const int ValidationCommonMinimumLength = 3;
+        public const int ValidationCommonMaximumLength = 50;
     }
 }
