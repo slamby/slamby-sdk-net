@@ -25,7 +25,7 @@ namespace Slamby.SDK.Net.Models
         /// This percentage will calculate the document number by using the available dataset document number. 
         /// E.g.: if your dataset contains 100.000 documents and you are using 10% as a sampling size without stratified method, your sample size is 100.000 x 10% = 10.000
         /// </summary>
-        [Range(0.0,100.0)]
+        [Range(0,100)]
         public double Percent { get; set; }
 
         /// <summary>

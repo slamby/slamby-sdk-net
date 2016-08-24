@@ -1,4 +1,5 @@
-﻿using Slamby.SDK.Net.Models.Enums;
+﻿using Slamby.SDK.Net.Helpers;
+using Slamby.SDK.Net.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace Slamby.SDK.Net.Models
@@ -8,13 +9,14 @@ namespace Slamby.SDK.Net.Models
         /// <summary>
         /// The ordering of the list, Ascending or Descending
         /// </summary>
+        [EnumValidateExists(typeof(OrderDirectionEnum))]
         public OrderDirectionEnum OrderDirection { get; set; }
 
         /// <summary>
         /// It must be an existing field. Declares the base of the ordering
         /// </summary>
         [RegularExpression(Constants.ValidationCommonRegex)]
-        [StringLength(Constants.ValidationCommonMaximumLength, MinimumLength = Constants.ValidationCommonMinimumLength)]
+        [StringLength(Constants.ValidationCommonMaximumLength, MinimumLength = 1)]
         public string OrderByField { get; set; }
     }
 }

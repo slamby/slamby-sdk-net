@@ -49,6 +49,7 @@
     <Compile Include="Helpers\HttpMessageHelper.cs" />
     <Compile Include="Helpers\IRawMessageSubscriber.cs" />
     <Compile Include="Helpers\RawMessageEventArgs.cs" />
+    <Compile Include="Helpers\ValidationHelpers.cs" />
     <Compile Include="Managers\BaseManager.cs" />
     <Compile Include="Managers\DataSetManager.cs" />
     <Compile Include="Managers\DocumentManager.cs" />
