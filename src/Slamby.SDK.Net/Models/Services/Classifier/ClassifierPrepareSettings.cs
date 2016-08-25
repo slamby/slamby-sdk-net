@@ -12,6 +12,8 @@ namespace Slamby.SDK.Net.Models.Services
         /// The DataSet name where the Classifier will be trained from
         /// </summary>
         [Required]
+        [RegularExpression(Constants.ValidationCommonRegex)]
+        [StringLength(Constants.ValidationCommonMaximumLength, MinimumLength = Constants.ValidationCommonMinimumLength)]
         public string DataSetName { get; set; }
 
         /// <summary>

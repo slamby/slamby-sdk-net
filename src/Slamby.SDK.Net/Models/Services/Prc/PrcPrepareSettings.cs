@@ -6,6 +6,8 @@ namespace Slamby.SDK.Net.Models.Services
     public class PrcPrepareSettings
     {
         [Required]
+        [RegularExpression(Constants.ValidationCommonRegex)]
+        [StringLength(Constants.ValidationCommonMaximumLength, MinimumLength = Constants.ValidationCommonMinimumLength)]
         public string DataSetName { get; set; }
 
         public List<string> TagIdList { get; set; }
