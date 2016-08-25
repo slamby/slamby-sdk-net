@@ -9,7 +9,6 @@ namespace Slamby.SDK.Net.Models
         /// <summary>
         /// The ordering of the list, Ascending or Descending
         /// </summary>
-        [EnumValidateExists(typeof(OrderDirectionEnum))]
         public OrderDirectionEnum OrderDirection { get; set; }
 
         /// <summary>
