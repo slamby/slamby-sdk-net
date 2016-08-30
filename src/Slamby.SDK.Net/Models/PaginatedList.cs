@@ -7,7 +7,7 @@ namespace Slamby.SDK.Net.Models
         /// <summary>
         /// Containing the actual displayed items. The type of the elements depend on the method
         /// </summary>
-        public IEnumerable<T> Items { get; set; }
+        public List<T> Items { get; set; } = new List<T>();
 
         /// <summary>
         /// The count of the actual returned items

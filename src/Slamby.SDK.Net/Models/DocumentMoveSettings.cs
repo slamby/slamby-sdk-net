@@ -9,7 +9,7 @@ namespace Slamby.SDK.Net.Models
         /// The Id list of the documents you want to move
         /// </summary>
         [Required]
-        public IEnumerable<string> Ids { get; set; }
+        public List<string> DocumentIdList { get; set; } = new List<string>();
 
         /// <summary>
         /// The DataSet name where you want to move the selected documents
