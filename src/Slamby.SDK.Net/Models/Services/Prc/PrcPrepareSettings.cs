@@ -10,7 +10,10 @@ namespace Slamby.SDK.Net.Models.Services
         [StringLength(Constants.ValidationCommonMaximumLength, MinimumLength = Constants.ValidationCommonMinimumLength)]
         public string DataSetName { get; set; }
 
-        public List<string> TagIdList { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public List<string> TagIdList { get; set; } = new List<string>();
 
         /// <summary>
         /// 

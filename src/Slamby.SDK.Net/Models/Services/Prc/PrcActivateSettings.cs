@@ -4,6 +4,6 @@ namespace Slamby.SDK.Net.Models.Services
 {
     public class PrcActivateSettings
     {
-        public List<string> FieldsForRecommendation { get; set; }
+        public List<string> FieldsForRecommendation { get; set; } = new List<string>();
     }
 }

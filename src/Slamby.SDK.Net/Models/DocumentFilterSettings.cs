@@ -15,6 +15,6 @@ namespace Slamby.SDK.Net.Models
         /// <summary>
         /// Query returns only with the specified field(s)
         /// </summary>
-        public List<string> Fields { get; set; } = new List<string>();
+        public List<string> FieldList { get; set; } = new List<string>();
     }
 }

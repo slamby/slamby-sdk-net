@@ -1,6 +1,6 @@
-﻿using Slamby.SDK.Net.Models.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Slamby.SDK.Net.Models.Enums;
 
 namespace Slamby.SDK.Net.Models
 {
@@ -49,7 +49,7 @@ namespace Slamby.SDK.Net.Models
         /// </summary>
         public ProcessTypeEnum Type { get; set; }
 
-        public List<string> ErrorMessages { get; set; }
+        public List<string> ErrorMessages { get; set; } = new List<string>();
 
         public string ResultMessage { get; set; }
     }

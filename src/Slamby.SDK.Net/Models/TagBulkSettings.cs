@@ -12,7 +12,7 @@ namespace Slamby.SDK.Net.Models
         /// The complete tag hierarchy array
         /// </summary>
         [Required]
-        public List<Tag> Tags { get; set; }
+        public List<Tag> Tags { get; set; } = new List<Tag>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TagBulkSettings"/> class.

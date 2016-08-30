@@ -9,7 +9,7 @@ namespace Slamby.SDK.Net.Models
         /// The Id list of the documents you want to copy
         /// </summary>
         [Required]
-        public List<string> Ids { get; set; }
+        public List<string> IdList { get; set; } = new List<string>();
 
         /// <summary>
         /// The DataSet name where you want to copy the selected documents

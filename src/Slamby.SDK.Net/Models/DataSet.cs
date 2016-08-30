@@ -43,7 +43,7 @@ namespace Slamby.SDK.Net.Models
         /// For text analysis you can set those document fields that contains useful text content. Slamby is doing ngram analysis and text process related works on these fields. How to decide which field you need to set here? Only the interpreted field can be a part of text analyzes. To provide these fields just simply insert the needed text fields from your JSON document. Field names can contains just A-Z letters, numbers, _ (underscore) and - (hyphen) without any space
         /// </summary>
         [Required]
-        public List<string> InterpretedFields { get; set; }
+        public List<string> InterpretedFields { get; set; } = new List<string>();
 
         /// <summary>
         /// These are read only calculated values

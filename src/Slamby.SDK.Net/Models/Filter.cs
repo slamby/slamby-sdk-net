@@ -10,7 +10,7 @@ namespace Slamby.SDK.Net.Models
         /// It's useful to create powerful search queries inside given tags. 
         /// To filter inside a whole dataset, you can set this field to empty
         /// </summary>
-        public List<string> TagIds { get; set; }
+        public List<string> TagIdList { get; set; } = new List<string>();
 
         /// <summary>
         /// Set here the filters. The value is the query string you want to apply. 

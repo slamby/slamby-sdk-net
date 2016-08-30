@@ -109,7 +109,7 @@ namespace Slamby.SDK.Net
                 clientResponse = new ClientResponseWithObject<T>
                 {
                     HttpStatusCode = responseMsg.StatusCode,
-                    IsSuccessFul = responseMsg.IsSuccessStatusCode,
+                    IsSuccessful = responseMsg.IsSuccessStatusCode,
                     ServerMessage = responseMsg.ReasonPhrase
                 };
 
@@ -129,12 +129,12 @@ namespace Slamby.SDK.Net
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (JsonSerializationException ex)
                 {
                     Debug.WriteLine(ex.Message);
 
-                    clientResponse.IsSuccessFul = false;
-                    clientResponse.Errors = ErrorsModel.Create("Response is not a valid JSON:\n" + respString);
+                    clientResponse.IsSuccessful = false;
+                    clientResponse.Errors = ErrorsModel.Create("Response is not a Valid or Expected Type of JSON:\n" + respString);
                 }
 
                 clientResponse.ApiVersion = responseMsg.Headers.Where(header => string.Equals(header.Key, Constants.ApiVersionHeader, StringComparison.OrdinalIgnoreCase))

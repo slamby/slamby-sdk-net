@@ -48,7 +48,8 @@ namespace Slamby.SDK.Net.Models.Services
         /// <summary>
         /// Contains all the process ids which belongs to this service
         /// </summary>
-        public List<string> ProcessIdList { get; set; }
+        public List<string> ProcessIdList { get; set; } = new List<string>();
+
         public string ActualProcessId { get; set; }
     }
 }

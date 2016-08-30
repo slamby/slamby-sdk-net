@@ -1,5 +1,4 @@
-﻿using Slamby.SDK.Net.Helpers;
-using Slamby.SDK.Net.Models.Enums;
+﻿using Slamby.SDK.Net.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace Slamby.SDK.Net.Models
