@@ -7,18 +7,18 @@ namespace Slamby.SDK.Net.Models
     /// </summary>
     public class ErrorsModel
     {
-        public List<string> Errors { get; set; }
+        public List<string> Errors { get; set; } = new List<string>();
 
         public static ErrorsModel Create(string error)
         {
             return Create(new List<string> { error });
         }
 
-        public static ErrorsModel Create(List<string> errors)
+        public static ErrorsModel Create(IEnumerable<string> errors)
         {
             var errorsModel = new ErrorsModel()
             {
-                Errors = errors
+                Errors = new List<string>(errors)
             };
 
             return errorsModel;
