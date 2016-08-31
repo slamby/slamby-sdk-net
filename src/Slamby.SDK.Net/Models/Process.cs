@@ -10,7 +10,7 @@ namespace Slamby.SDK.Net.Models
     public class Process
     {
         /// <summary>
-        /// The process Guid identifier
+        /// The process GUID identifier
         /// </summary>
         public string Id { get; set; }
 
@@ -37,7 +37,7 @@ namespace Slamby.SDK.Net.Models
         /// <summary>
         /// InProgress - the process is in progress, it's working |
         /// Cancelled - the process was cancelled by the user |
-        /// Finished - the process was finished succesffully |
+        /// Finished - the process was finished successfully |
         /// Error - the process stopped by an error, see the ErrorMessages for detailed information |
         /// Interrupted - the process was interrupted by an unknown event (e.g.: server restart) - under development |
         /// Paused - the process was paused  - under development

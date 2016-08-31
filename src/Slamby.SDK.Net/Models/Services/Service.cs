@@ -12,7 +12,7 @@ namespace Slamby.SDK.Net.Models.Services
         public string Id { get; set; }
 
         /// <summary>
-        /// User defined name for the service
+        /// User-defined name for the service
         /// </summary>
         [Required]
         public string Name { get; set; }
@@ -46,7 +46,7 @@ namespace Slamby.SDK.Net.Models.Services
         public ServiceTypeEnum Type { get; set; }
 
         /// <summary>
-        /// Contains all the process ids which belongs to this service
+        /// Contains all the process ids which belong to this service
         /// </summary>
         public List<string> ProcessIdList { get; set; } = new List<string>();
 

@@ -6,19 +6,19 @@
     public class FileParserResult
     {
         /// <summary>
-        /// Text content of sent document. Can be empty.
+        /// The text content of sent document. Can be empty.
         /// </summary>
         public string Content { get; set; }
 
         /// <summary>
-        /// Title of the document. Can be null or empty.
+        /// The title of the document. Can be null or empty.
         /// </summary>
         public string Title { get; set; }
 
         public string Date { get; set; }
 
         /// <summary>
-        /// Author of the document. Can be null or empty.
+        /// The author of the document. Can be null or empty.
         /// </summary>
         public string Author { get; set; }
 
@@ -28,12 +28,12 @@
         public string Keywords { get; set; }
 
         /// <summary>
-        /// Type of the document (e.g.: application/pdf). Can be empty.
+        /// The type of the document (e.g.: application/pdf). Can be empty.
         /// </summary>
         public string ContentType { get; set; }
 
         /// <summary>
-        /// Length of the received document.
+        /// The length of the received document.
         /// </summary>
         public int ContentLength { get; set; }
 

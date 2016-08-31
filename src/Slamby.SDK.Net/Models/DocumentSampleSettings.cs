@@ -7,7 +7,7 @@ namespace Slamby.SDK.Net.Models
     {
         /// <summary>
         /// It must be a random string for every new sampling, but must be the same for the same sampling during pagination. 
-        /// If you leave it empty than it'll be generated automatically, but then you can not use pagination
+        /// If you leave it empty then it'll be generated automatically, but then you can not use pagination
         /// </summary>
         [Required]
         public string Id { get; set; }
