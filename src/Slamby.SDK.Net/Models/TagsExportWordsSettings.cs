@@ -11,7 +11,6 @@ namespace Slamby.SDK.Net.Models
         public List<string> TagIdList { get; set; } = new List<string>();
 
         [Required]
-        [Range(1, 6)]
         public List<int> NGramList { get; set; } = new List<int>();
     }
 }
