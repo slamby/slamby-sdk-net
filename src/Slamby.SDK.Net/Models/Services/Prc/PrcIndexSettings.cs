@@ -2,6 +2,6 @@
 {
     public class PrcIndexSettings
     {
-        public Filter Filter { get; set; }
+        public Filter Filter { get; set; } = new Filter();
     }
 }
