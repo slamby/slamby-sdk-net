@@ -8,9 +8,11 @@ namespace Slamby.SDK.Net.Models
     public class DataSetUpdate
     {
         /// <summary>
-        /// Name of your dataset. Contains just A-Z letters and numbers without any space. This field is unique
+        /// Name of your dataset. Can contains just A-Z letters, numbers, _ (underscore) and - (hyphen) without any space. This field is unique
         /// </summary>
         [Required]
+        [RegularExpression(Constants.ValidationCommonRegex)]
+        [StringLength(Constants.ValidationCommonMaximumLength, MinimumLength = Constants.ValidationCommonMinimumLength)]
         public string Name { get; set; }
     }
 }

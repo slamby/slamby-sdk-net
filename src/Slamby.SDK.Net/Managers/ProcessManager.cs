@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Slamby.SDK.Net.Managers.Interfaces;
 using Slamby.SDK.Net.Models;
@@ -18,11 +19,21 @@ namespace Slamby.SDK.Net.Managers
 
         public async Task<ClientResponseWithObject<Process>> GetProcessAsync(string processId)
         {
+            if (string.IsNullOrWhiteSpace(processId))
+            {
+                throw new ArgumentException(nameof(processId));
+            }
+
             return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Get, null, processId, null, null);
         }
 
         public async Task<ClientResponse> CancelProcessAsync(string processId)
         {
+            if (string.IsNullOrWhiteSpace(processId))
+            {
+                throw new ArgumentException(nameof(processId));
+            }
+
             return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, null, $"{processId}/{CancelEndpointSuffix}", null, null);
         }
 

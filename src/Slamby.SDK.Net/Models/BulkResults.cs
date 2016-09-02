@@ -7,7 +7,7 @@ namespace Slamby.SDK.Net.Models
         /// <summary>
         /// Array of the documents to be saved
         /// </summary>
-        public List<BulkResult> Results { get; set; }
+        public List<BulkResult> Results { get; set; } = new List<BulkResult>();
 
         public BulkResults()
         {

@@ -7,7 +7,7 @@ namespace Slamby.SDK.Net.Models
     {
         /// <summary>
         /// It must be a random string for every new sampling, but must be the same for the same sampling during pagination. 
-        /// If you leave it empty than it'll be generated automatically, but then you can not use pagination
+        /// If you leave it empty then it'll be generated automatically, but then you can not use pagination
         /// </summary>
         [Required]
         public string Id { get; set; }
@@ -17,12 +17,7 @@ namespace Slamby.SDK.Net.Models
         /// To create a sample from the whole dataset please keep it empty. 
         /// To create a sample from a given number of tags please provide the tag ids
         /// </summary>
-        public List<string> TagIds { get; set; }
-
-        /// <summary>
-        /// You can use stratified sampling. In this case the sampling will be created by tags. For general sampling don't use stratified sampling
-        /// </summary>
-        public bool IsStratified { get; set; }
+        public List<string> TagIdList { get; set; } = new List<string>();
 
         /// <summary>
         /// Defining the sample size, you can use percentage or a given number. 
@@ -30,6 +25,7 @@ namespace Slamby.SDK.Net.Models
         /// This percentage will calculate the document number by using the available dataset document number. 
         /// E.g.: if your dataset contains 100.000 documents and you are using 10% as a sampling size without stratified method, your sample size is 100.000 x 10% = 10.000
         /// </summary>
+        [Range(0,100)]
         public double Percent { get; set; }
 
         /// <summary>
@@ -41,6 +37,6 @@ namespace Slamby.SDK.Net.Models
         /// <summary>
         /// Query returns only with the specified field(s)
         /// </summary>
-        public List<string> Fields { get; set; } = new List<string>();
+        public List<string> FieldList { get; set; } = new List<string>();
     }
 }

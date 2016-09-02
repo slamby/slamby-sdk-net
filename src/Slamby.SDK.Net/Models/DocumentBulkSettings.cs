@@ -9,11 +9,6 @@ namespace Slamby.SDK.Net.Models
         /// Array of the documents to be saved
         /// </summary>
         [Required]
-        public List<object> Documents { get; set; }
-
-        public DocumentBulkSettings()
-        {
-            Documents = new List<object>();
-        }
+        public List<object> Documents { get; set; } = new List<object>();
     }
 }

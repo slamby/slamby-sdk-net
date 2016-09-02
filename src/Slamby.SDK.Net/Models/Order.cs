@@ -1,4 +1,5 @@
 ﻿using Slamby.SDK.Net.Models.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace Slamby.SDK.Net.Models
 {
@@ -12,6 +13,8 @@ namespace Slamby.SDK.Net.Models
         /// <summary>
         /// It must be an existing field. Declares the base of the ordering
         /// </summary>
+        [RegularExpression(Constants.ValidationCommonRegex)]
+        [StringLength(Constants.ValidationCommonMaximumLength, MinimumLength = 1)]
         public string OrderByField { get; set; }
     }
 }

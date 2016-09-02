@@ -8,6 +8,8 @@
         PrcExportDictionaries,
         TagsExportWords,
         ClassifierActivate,
-        PrcActivate
+        PrcActivate,
+        PrcIndex,
+        PrcIndexPartial,
     }
 }

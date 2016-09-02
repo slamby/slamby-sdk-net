@@ -8,7 +8,7 @@ namespace Slamby.SDK.Net.Models
     public class Tag
     {
         /// <summary>
-        /// The identifier of the tag. It must be unique accross the DataSet
+        /// The identifier of the tag. It must be unique across the DataSet
         /// </summary>
         [Required]
         public string Id { get; set; }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -108,7 +109,7 @@ namespace Slamby.SDK.Net
                 clientResponse = new ClientResponseWithObject<T>
                 {
                     HttpStatusCode = responseMsg.StatusCode,
-                    IsSuccessFul = responseMsg.IsSuccessStatusCode,
+                    IsSuccessful = responseMsg.IsSuccessStatusCode,
                     ServerMessage = responseMsg.ReasonPhrase
                 };
 
@@ -128,10 +129,12 @@ namespace Slamby.SDK.Net
                         }
                     }
                 }
-                catch
+                catch (JsonSerializationException ex)
                 {
-                    clientResponse.IsSuccessFul = false;
-                    clientResponse.Errors = ErrorsModel.Create("Response is not a valid JSON:\n" + respString);
+                    Debug.WriteLine(ex.Message);
+
+                    clientResponse.IsSuccessful = false;
+                    clientResponse.Errors = ErrorsModel.Create("Response is not a Valid or Expected Type of JSON:\n" + respString);
                 }
 
                 clientResponse.ApiVersion = responseMsg.Headers.Where(header => string.Equals(header.Key, Constants.ApiVersionHeader, StringComparison.OrdinalIgnoreCase))
