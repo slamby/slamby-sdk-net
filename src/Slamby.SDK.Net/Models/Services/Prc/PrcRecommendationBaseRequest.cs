@@ -9,7 +9,6 @@ namespace Slamby.SDK.Net.Models.Services
 
         public bool NeedDocumentInResult { get; set; }
 
-        [Required]
         public string TagId { get; set; }
 
         public Filter Filter { get; set; }
