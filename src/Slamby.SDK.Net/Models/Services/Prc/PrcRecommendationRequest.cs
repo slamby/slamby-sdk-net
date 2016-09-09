@@ -6,5 +6,7 @@ namespace Slamby.SDK.Net.Models.Services
     {
         [Required]
         public string Text { get; set; }
+
+        public Filter Filter { get; set; }
     }
 }

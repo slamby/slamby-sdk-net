@@ -11,8 +11,6 @@ namespace Slamby.SDK.Net.Models.Services
 
         public string TagId { get; set; }
 
-        public Filter Filter { get; set; }
-
         public List<Weight> Weights { get; set; } = new List<Weight>();
     }
 }
