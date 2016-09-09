@@ -32,7 +32,7 @@ namespace Slamby.SDK.Net.Models
         public string IdField { get; set; }
 
         /// <summary>
-        /// For text categorization we provide a predefined document field to store your tags (or categories). If your documents are related to tags or categories, please insert here the tags field name from your sample JSON. Can contains just A-Z letters, numbers, _ (underscore) and - (hyphen) without any space
+        /// For text categorization, we provide a predefined document field to store your tags (or categories). If your documents are related to tags or categories, please insert here the tags field name from your sample JSON. Can contains just A-Z letters, numbers, _ (underscore) and - (hyphen) without any space
         /// </summary>
         [Required]
         [RegularExpression(Constants.ValidationCommonRegex)]
@@ -40,23 +40,23 @@ namespace Slamby.SDK.Net.Models
         public string TagField { get; set; }
 
         /// <summary>
-        /// For text analysis you can set those document fields that contains useful text content. Slamby is doing ngram analysis and text process related works on these fields. How to decide which field you need to set here? Only the interpreted field can be a part of text analyzes. To provide these fields just simply insert the needed text fields from your JSON document. Field names can contains just A-Z letters, numbers, _ (underscore) and - (hyphen) without any space
+        /// For text analysis, you can set those document fields that contains useful text content. Slamby is doing ngram analysis and text process related works on these fields. How to decide which field you need to set here? Only the interpreted field can be a part of text analyzes. To provide these fields just simply insert the needed text fields from your JSON document. Field names can contain just A-Z letters, numbers, _ (underscore) and - (hyphen) without any space
         /// </summary>
         [Required]
-        public List<string> InterpretedFields { get; set; }
+        public List<string> InterpretedFields { get; set; } = new List<string>();
 
         /// <summary>
-        /// These are read only calculated values
+        /// These are read-only calculated values
         /// </summary>
         public DataSetStats Statistics { get; set; }
 
         /// <summary>
-        /// Using flexible document schema, you can store all of your required data inside one simple dataset. To create a dataset with your required schema you can provide a sample document. The schema is flexible; the only requirement is using standard JSON format. Field names can contains just A-Z letters, numbers, _ (underscore) and - (hyphen) without any space
+        /// Using flexible document schema, you can store all of your required data inside one simple dataset. To create a dataset with your required schema you can provide a sample document. The schema is flexible; the only requirement is using standard JSON format. Field names can contain just A-Z letters, numbers, _ (underscore) and - (hyphen) without any space
         /// </summary>
         public object SampleDocument { get; set; }
 
         /// <summary>
-        /// Using flexible document schema, you can store all of your required data inside one simple dataset. To create a dataset with your required schema you can provide a schema. The schema is flexible. Field names can contains just A-Z letters, numbers, _ (underscore) and - (hyphen) without any space
+        /// Using flexible document schema, you can store all of your required data inside one simple dataset. To create a dataset with your required schema you can provide a schema. The schema is flexible. Field names can contain just A-Z letters, numbers, _ (underscore) and - (hyphen) without any space
         /// </summary>
         public object Schema { get; set; }
     }

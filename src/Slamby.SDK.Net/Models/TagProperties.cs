@@ -8,9 +8,9 @@ namespace Slamby.SDK.Net.Models
     public class TagProperties
     {
         /// <summary>
-        /// A tag array contains parent path elements
+        /// A tag list contains parent path elements
         /// </summary>
-        public List<PathItem> Path { get; set; } = new List<PathItem>();
+        public List<PathItem> Paths { get; set; } = new List<PathItem>();
 
         /// <summary>
         /// The level of the tag in the hierarchy (root level is: 0)

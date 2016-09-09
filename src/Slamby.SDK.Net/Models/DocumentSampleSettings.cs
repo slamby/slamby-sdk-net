@@ -7,7 +7,7 @@ namespace Slamby.SDK.Net.Models
     {
         /// <summary>
         /// It must be a random string for every new sampling, but must be the same for the same sampling during pagination. 
-        /// If you leave it empty than it'll be generated automatically, but then you can not use pagination
+        /// If you leave it empty then it'll be generated automatically, but then you can not use pagination
         /// </summary>
         [Required]
         public string Id { get; set; }
@@ -17,7 +17,7 @@ namespace Slamby.SDK.Net.Models
         /// To create a sample from the whole dataset please keep it empty. 
         /// To create a sample from a given number of tags please provide the tag ids
         /// </summary>
-        public List<string> TagIds { get; set; }
+        public List<string> TagIdList { get; set; } = new List<string>();
 
         /// <summary>
         /// Defining the sample size, you can use percentage or a given number. 
@@ -37,6 +37,6 @@ namespace Slamby.SDK.Net.Models
         /// <summary>
         /// Query returns only with the specified field(s)
         /// </summary>
-        public List<string> Fields { get; set; } = new List<string>();
+        public List<string> FieldList { get; set; } = new List<string>();
     }
 }
