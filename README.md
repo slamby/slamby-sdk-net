@@ -1,4 +1,4 @@
-# Slamby SDK .NET v0.15
+# Slamby SDK .NET
 Slamby .NET SDK and Nuget Package.
 
 This project is open source.
