@@ -8,8 +8,13 @@ namespace Slamby.SDK.Net.Models
         [Required]
         public Pagination Pagination { get; set; }
 
-        public bool IdsOnly { get; set; }
+        public Order Order { get; set; }
 
         public Filter Filter { get; set; }
+
+        /// <summary>
+        /// Query returns only with the specified field(s)
+        /// </summary>
+        public List<string> FieldList { get; set; } = new List<string>();
     }
 }

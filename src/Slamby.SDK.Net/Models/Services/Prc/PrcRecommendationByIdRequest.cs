@@ -1,10 +1,12 @@
-﻿namespace Slamby.SDK.Net.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Slamby.SDK.Net.Models.Services
 {
-    /// <summary>
-    /// Weight object
-    /// </summary>
-    public class Weight
+    public class PrcRecommendationByIdRequest : PrcRecommendationBaseRequest
     {
+        [Required]
+        public string DocumentId { get; set; }
+
         /// <summary>
         /// Set here the filters. The value is the query string you want to apply. 
         /// Can be BOOL expressions. You can use these: AND, OR, NOT. 
@@ -13,8 +15,5 @@
         /// If you want to search in a specified field, than do this: 'title:searchthisinthetitle'
         /// </summary>
         public string Query { get; set; }
-
-
-        public double Value { get; set; }
     }
 }

@@ -1,10 +1,8 @@
-﻿using Slamby.SDK.Net.Models;
-using Slamby.SDK.Net.Models.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Slamby.SDK.Net.Managers.Interfaces;
+using Slamby.SDK.Net.Models;
+using Slamby.SDK.Net.Models.Services;
 
 namespace Slamby.SDK.Net.Managers
 {
@@ -33,7 +31,7 @@ namespace Slamby.SDK.Net.Managers
             return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, classifierPrepareSettings, $"{serviceId}/{PrepareEndpointSuffix}", null, null);
         }
 
-        public async Task<ClientResponse> ActivateServiceAsync(string serviceId, ClassifierActivateSettings classifierActivateSettings)
+        public async Task<ClientResponseWithObject<Process>> ActivateServiceAsync(string serviceId, ClassifierActivateSettings classifierActivateSettings)
         {
             return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, classifierActivateSettings, $"{serviceId}/{ActivateEndpointSuffix}", null, null);
         }
@@ -43,7 +41,7 @@ namespace Slamby.SDK.Net.Managers
             return await _client.SendAsync<Process>(System.Net.Http.HttpMethod.Post, null, $"{serviceId}/{DeactivateEndpointSuffix}", null, null);
         }
 
-        public async Task<ClientResponseWithObject<IEnumerable<ClassifierRecommendationResult>>> RecommendServiceAsync(string serviceId, ClassifierRecommendationRequest classifierRecommendationRequest)
+        public async Task<ClientResponseWithObject<IEnumerable<ClassifierRecommendationResult>>> RecommendAsync(string serviceId, ClassifierRecommendationRequest classifierRecommendationRequest)
         {
             return await _client.SendAsync<IEnumerable<ClassifierRecommendationResult>>(System.Net.Http.HttpMethod.Post, classifierRecommendationRequest, $"{serviceId}/{RecommendEndpointSuffix}", null, null);
         }

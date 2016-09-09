@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Slamby.SDK.Net.Models.Enums
+﻿namespace Slamby.SDK.Net.Models.Enums
 {
     public enum ProcessStatusEnum
     {
@@ -13,6 +7,7 @@ namespace Slamby.SDK.Net.Models.Enums
         Finished,
         Error,
         Interrupted,
-        Paused
+        Paused,
+        Cancelling
     }
 }

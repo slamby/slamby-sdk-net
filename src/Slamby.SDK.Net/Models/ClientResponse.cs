@@ -15,7 +15,7 @@ namespace Slamby.SDK.Net.Models
         /// <summary>
         /// Request was successful or not
         /// </summary>
-        public bool IsSuccessFul { get; set; }
+        public bool IsSuccessful { get; set; }
 
         /// <summary>
         /// Response HTTP status code

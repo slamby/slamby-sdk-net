@@ -4,7 +4,10 @@ namespace Slamby.SDK.Net.Models
 {
     public class BulkResults
     {
-        public List<BulkResult> Results { get; set; }
+        /// <summary>
+        /// Array of the documents to be saved
+        /// </summary>
+        public List<BulkResult> Results { get; set; } = new List<BulkResult>();
 
         public BulkResults()
         {

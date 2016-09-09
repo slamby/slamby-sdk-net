@@ -1,9 +1,9 @@
-﻿using Slamby.SDK.Net.Models;
-using Slamby.SDK.Net.Models.Services;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Collections.Generic;
+using Slamby.SDK.Net.Models;
+using Slamby.SDK.Net.Models.Services;
 
-namespace Slamby.SDK.Net.Managers
+namespace Slamby.SDK.Net.Managers.Interfaces
 {
     public interface IServiceManager
     {
