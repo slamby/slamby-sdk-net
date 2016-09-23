@@ -10,15 +10,15 @@ namespace Slamby.SDK.Net.Managers
     public class PrcServiceManager : BaseManager, IPrcServiceManager
     {
         private static readonly string Endpoint = "api/services/prc";
-        private static readonly string PrepareEndpointSuffix = "/prepare";
-        private static readonly string ActivateEndpointSuffix = "/activate";
-        private static readonly string DeactivateEndpointSuffix = "/deactivate";
-        private static readonly string RecommendEndpointSuffix = "/recommend";
-        private static readonly string ExportDictionariesEndpointSuffix = "/exportdictionaries";
-        private static readonly string KeywordsEndpointSuffix = "/keywords";
-        private static readonly string IndexEndpointSuffix = "/index";
-        private static readonly string IndexPartialEndpointSuffix = "/indexpartial";
-        private static readonly string RecommendByIdEndpointSuffix = "/recommendbyid";
+        private static readonly string PrepareEndpointSuffix = "prepare";
+        private static readonly string ActivateEndpointSuffix = "activate";
+        private static readonly string DeactivateEndpointSuffix = "deactivate";
+        private static readonly string RecommendEndpointSuffix = "recommend";
+        private static readonly string ExportDictionariesEndpointSuffix = "exportdictionaries";
+        private static readonly string KeywordsEndpointSuffix = "keywords";
+        private static readonly string IndexEndpointSuffix = "index";
+        private static readonly string IndexPartialEndpointSuffix = "indexpartial";
+        private static readonly string RecommendByIdEndpointSuffix = "recommendbyid";
 
         public PrcServiceManager(Configuration config) 
             : base(config, Endpoint)
