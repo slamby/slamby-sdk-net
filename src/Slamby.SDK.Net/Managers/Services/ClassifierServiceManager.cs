@@ -9,11 +9,11 @@ namespace Slamby.SDK.Net.Managers
     public class ClassifierServiceManager : BaseManager, IClassifierServiceManager
     {
         private static readonly string Endpoint = "api/services/classifier";
-        private static readonly string PrepareEndpointSuffix = "/prepare";
-        private static readonly string ActivateEndpointSuffix = "/activate";
-        private static readonly string DeactivateEndpointSuffix = "/deactivate";
-        private static readonly string RecommendEndpointSuffix = "/recommend";
-        private static readonly string ExportDictionariesEndpointSuffix = "/exportdictionaries";
+        private static readonly string PrepareEndpointSuffix = "prepare";
+        private static readonly string ActivateEndpointSuffix = "activate";
+        private static readonly string DeactivateEndpointSuffix = "deactivate";
+        private static readonly string RecommendEndpointSuffix = "recommend";
+        private static readonly string ExportDictionariesEndpointSuffix = "exportdictionaries";
 
         public ClassifierServiceManager(Configuration config) 
             : base(config, Endpoint)

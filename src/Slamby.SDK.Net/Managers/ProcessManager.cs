@@ -9,7 +9,7 @@ namespace Slamby.SDK.Net.Managers
     public class ProcessManager : BaseManager, IProcessManager
     {
         private static readonly string Endpoint = "api/processes";
-        private static readonly string CancelEndpointSuffix = "/cancel";
+        private static readonly string CancelEndpointSuffix = "cancel";
 
         public ProcessManager(Configuration config) 
             : base(config, Endpoint)
