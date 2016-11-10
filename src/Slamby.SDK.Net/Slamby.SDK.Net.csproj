@@ -69,6 +69,7 @@
     <Compile Include="Managers\Services\ServiceManager.cs" />
     <Compile Include="Managers\TagManager.cs" />
     <Compile Include="Models\BulkResult.cs" />
+    <Compile Include="Models\ChangeSecret.cs" />
     <Compile Include="Models\ClientResponse.cs" />
     <Compile Include="Models\DataSetUpdate.cs" />
     <Compile Include="Models\DataSet.cs" />
