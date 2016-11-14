@@ -8,9 +8,9 @@ namespace Slamby.SDK.Net.Managers
     public class TagManager : BaseManager, ITagManager
     {
         private static readonly string Endpoint = "api/tags";
-        private static readonly string BulkEndpoint = "api/tags/bulk";
-        private static readonly string CleanDocumentsEndpoint = "api/tags/cleandocuments";
-        private static readonly string WordsExportEndpoint = "api/tags/exportwords";
+        private static readonly string BulkEndpoint = $"{Endpoint}/bulk";
+        private static readonly string CleanDocumentsEndpoint = $"{Endpoint}/cleandocuments";
+        private static readonly string WordsExportEndpoint = $"{Endpoint}/exportwords";
         private readonly Dictionary<string, string> Headers = new Dictionary<string, string>();
 
         public TagManager(Configuration config, string dataSetName) : 

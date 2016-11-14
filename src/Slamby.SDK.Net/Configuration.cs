@@ -16,7 +16,7 @@ namespace Slamby.SDK.Net
             set
             {
                 // make sure ends with "/"
-                if (!value.OriginalString.EndsWith("/"))
+                if (!value.OriginalString.EndsWith("/", StringComparison.Ordinal))
                 {
                     apiBaseEndpoint = new Uri(value.OriginalString + "/");
                 }
