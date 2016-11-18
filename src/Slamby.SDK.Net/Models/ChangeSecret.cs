@@ -11,6 +11,6 @@ namespace Slamby.SDK.Net.Models
         /// New secret to be set
         /// </summary>
         [Required]
-        public string NewSecret { get; set; }
+        public string Secret { get; set; }
     }
 }
