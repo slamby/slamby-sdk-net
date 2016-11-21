@@ -52,12 +52,16 @@
     <Compile Include="Managers\BaseManager.cs" />
     <Compile Include="Managers\DataSetManager.cs" />
     <Compile Include="Managers\DocumentManager.cs" />
+    <Compile Include="Managers\Interfaces\ILicenseManager.cs" />
+    <Compile Include="Managers\Interfaces\IMaintenanceManager.cs" />
     <Compile Include="Managers\Interfaces\IHelperManager.cs" />
     <Compile Include="Managers\Interfaces\IDataSetManager.cs" />
     <Compile Include="Managers\Interfaces\IDocumentManager.cs" />
     <Compile Include="Managers\Interfaces\IProcessManager.cs" />
     <Compile Include="Managers\Interfaces\IStatusManager.cs" />
     <Compile Include="Managers\HelperManager.cs" />
+    <Compile Include="Managers\MaintenanceManager.cs" />
+    <Compile Include="Managers\LicenseManager.cs" />
     <Compile Include="Managers\StatusManager.cs" />
     <Compile Include="Managers\ProcessManager.cs" />
     <Compile Include="Managers\Services\ClassifierServiceManager.cs" />
@@ -69,6 +73,7 @@
     <Compile Include="Managers\Services\ServiceManager.cs" />
     <Compile Include="Managers\TagManager.cs" />
     <Compile Include="Models\BulkResult.cs" />
+    <Compile Include="Models\ChangeSecret.cs" />
     <Compile Include="Models\ClientResponse.cs" />
     <Compile Include="Models\DataSetUpdate.cs" />
     <Compile Include="Models\DataSet.cs" />
@@ -77,6 +82,8 @@
     <Compile Include="Models\Enums\ProcessTypeEnum.cs" />
     <Compile Include="Models\FileParser.cs" />
     <Compile Include="Models\FileParserResult.cs" />
+    <Compile Include="Models\License.cs" />
+    <Compile Include="Models\ChangeLicense.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Services\CompressSettings.cs" />
     <Compile Include="Models\Services\ExportDictionariesSettings.cs" />
