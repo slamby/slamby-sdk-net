@@ -8,7 +8,7 @@ namespace Slamby.SDK.Net.Managers
     public class DataSetManager : BaseManager, IDataSetManager
     {
         private static readonly string Endpoint = "api/datasets";
-        private static readonly string SchemaEndpoint = "api/datasets/schema";
+        private static readonly string SchemaEndpoint = $"{Endpoint}/schema";
 
         public DataSetManager(Configuration config) : base(config, Endpoint) { }
 

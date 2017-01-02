@@ -8,11 +8,11 @@ namespace Slamby.SDK.Net.Managers
     public class DocumentManager : BaseManager, IDocumentManager
     {
         private static readonly string Endpoint = "api/documents";
-        private static readonly string FilterEndpoint = "api/documents/filter";
-        private static readonly string SampleEndpoint = "api/documents/sample";
-        private static readonly string CopyEndpoint = "api/documents/copy";
-        private static readonly string MoveEndpoint = "api/documents/move";
-        private static readonly string BulkEndpoint = "api/documents/bulk";
+        private static readonly string FilterEndpoint = $"{Endpoint}/filter";
+        private static readonly string SampleEndpoint = $"{Endpoint}/sample";
+        private static readonly string CopyEndpoint = $"{Endpoint}/copy";
+        private static readonly string MoveEndpoint = $"{Endpoint}/move";
+        private static readonly string BulkEndpoint = $"{Endpoint}/bulk";
         private readonly Dictionary<string, string> Headers = new Dictionary<string, string>();
 
         public DocumentManager(Configuration config, string dataSetName) : base(config, Endpoint)

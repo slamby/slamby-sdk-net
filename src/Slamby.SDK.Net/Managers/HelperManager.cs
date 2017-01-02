@@ -7,7 +7,7 @@ namespace Slamby.SDK.Net.Managers
     public class HelperManager : BaseManager, IHelperManager
     {
         private static readonly string Endpoint = "api/helper";
-        private static readonly string FileParserEndpoint = "api/helper/fileparser";
+        private static readonly string FileParserEndpoint = $"{Endpoint}/fileparser";
 
         public HelperManager(Configuration config) 
             : base(config, Endpoint)
