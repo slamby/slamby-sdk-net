@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Slamby.SDK.Net.Models
 {
-    public class DocumentCopySettings
+    public class DocumentCopySettings : IDocumentSettings
     {
         /// <summary>
         /// The Id list of the documents you want to copy

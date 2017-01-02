@@ -11,5 +11,7 @@
         PrcActivate,
         PrcIndex,
         PrcIndexPartial,
+        DocumentsCopy,
+        DocumentsMove
     }
 }
