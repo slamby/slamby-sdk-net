@@ -6,7 +6,7 @@
   "copyright": "Copyright 2017",
   "dependencies": {
     "Newtonsoft.Json": "9.0.1",
-    "NETStandard.Library": "1.6.1",
+    "NETStandard.Library": "1.6.0",
     "System.ComponentModel.Annotations": "4.3.0"
   },
   "description": "Slamby.SDK.Net for Slamby.API Service",
