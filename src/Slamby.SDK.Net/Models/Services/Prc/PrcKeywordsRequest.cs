@@ -11,9 +11,8 @@ namespace Slamby.SDK.Net.Models.Services
         public string Text { get; set; }
 
         /// <summary>
-        /// The extracting keywords calculation depends on this Tag
+        /// The extracting keywords calculation depends on this Tag. Prc Service try to detect it automatically if it's not provided
         /// </summary>
-        [Required]
         public string TagId { get; set; }
     }
 }
