@@ -20,6 +20,11 @@ namespace Slamby.SDK.Net.Models
         /// <summary>
         /// The sum of all requests count in the current period
         /// </summary>
+        public int SumOfMonth { get; set; }
+
+        /// <summary>
+        /// The sum of all requests of all time
+        /// </summary>
         public int Sum { get; set; }
     }
 
