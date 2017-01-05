@@ -31,6 +31,11 @@
         public decimal AvailableFreeSpace { get; set; }
 
         /// <summary>
+        /// Total disk space in MB
+        /// </summary>
+        public decimal TotalSpace { get; set; }
+
+        /// <summary>
         /// Total physical memory in MB
         /// </summary>
         public decimal TotalMemory { get; set; }
