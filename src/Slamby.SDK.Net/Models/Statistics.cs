@@ -3,27 +3,38 @@
 namespace Slamby.SDK.Net.Models
 {
     /// <summary>
-    /// Statistics object, describes the usage statistics of a period (month)
+    /// Statistics object, describes the usage statistics of periods (months)
+    /// </summary>
+    public class StatisticsWrapper
+    {
+        /// <summary>
+        /// The sum of all requests of all time
+        /// </summary>
+        public int Sum { get; set; }
+
+        /// <summary>
+        /// list of the statistics
+        /// </summary>
+        public List<Statistics> StatisticsList { get; set; }
+    }
+
+    /// <summary>
+    /// contains statistics for one period (month)
     /// </summary>
     public class Statistics
     {
         /// <summary>
         /// The month of the actual stastistics. The format is yyyy-MM
         /// </summary>
-        public string Month { get; set; }
+        public string YearMonth { get; set; }
 
         /// <summary>
         /// List of actions
         /// </summary>
-        public List<Action> Actions { get; set; }
+        public List<Action> ActionList { get; set; }
 
         /// <summary>
         /// The sum of all requests count in the current period
-        /// </summary>
-        public int SumOfMonth { get; set; }
-
-        /// <summary>
-        /// The sum of all requests of all time
         /// </summary>
         public int Sum { get; set; }
     }
@@ -41,6 +52,6 @@ namespace Slamby.SDK.Net.Models
         /// <summary>
         /// The request count for this action in the current period
         /// </summary>
-        public int RequestCount { get; set; }
+        public int Count { get; set; }
     }
 }
