@@ -13,9 +13,9 @@ namespace Slamby.SDK.Net.Models
         public int Sum { get; set; }
 
         /// <summary>
-        /// list of the statistics
+        /// dictionary of the statistics, the key is the month of the actual stastistics. The format is yyyy-MM
         /// </summary>
-        public List<Statistics> StatisticsList { get; set; }
+        public Dictionary<string, Statistics> Statistics { get; set; }
     }
 
     /// <summary>
@@ -23,11 +23,6 @@ namespace Slamby.SDK.Net.Models
     /// </summary>
     public class Statistics
     {
-        /// <summary>
-        /// The month of the actual stastistics. The format is yyyy-MM
-        /// </summary>
-        public string YearMonth { get; set; }
-
         /// <summary>
         /// List of actions
         /// </summary>
