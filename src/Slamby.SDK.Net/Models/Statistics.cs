@@ -20,7 +20,7 @@ namespace Slamby.SDK.Net.Models
         /// <summary>
         /// The sum of all requests count in the current period
         /// </summary>
-        public int RequestSum { get; set; }
+        public int Sum { get; set; }
     }
 
     /// <summary>
