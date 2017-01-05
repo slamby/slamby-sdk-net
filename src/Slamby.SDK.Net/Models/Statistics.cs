@@ -26,7 +26,7 @@ namespace Slamby.SDK.Net.Models
         /// <summary>
         /// List of actions
         /// </summary>
-        public List<Action> ActionList { get; set; }
+        public List<Action> Actions { get; set; }
 
         /// <summary>
         /// The sum of all requests count in the current period
