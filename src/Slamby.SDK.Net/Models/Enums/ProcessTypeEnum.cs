@@ -12,6 +12,8 @@
         PrcIndex,
         PrcIndexPartial,
         DocumentsCopy,
-        DocumentsMove
+        DocumentsMove,
+        SearchPrepare,
+        SearchActivate
     }
 }
