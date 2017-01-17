@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Slamby.SDK.Net.Models.Services
 {
-    public class SearchService
+    public class SearchService : Service
     {
         public SearchPrepareSettings PrepareSettings { get; set; }
 
