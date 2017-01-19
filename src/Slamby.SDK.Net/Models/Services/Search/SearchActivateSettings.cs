@@ -41,8 +41,6 @@ namespace Slamby.SDK.Net.Models.Services
     }
 
     public class AutoCompleteSettings {
-        public int NGram { get; set; }
-
         public double Confidence { get; set; } = 2.0;
 
         public double MaximumErrors { get; set; } = 0.5;
