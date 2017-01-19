@@ -43,7 +43,7 @@ namespace Slamby.SDK.Net.Models.Services
     public class AutoCompleteSettings {
         public int NGram { get; set; }
 
-        public double Confidence { get; set; } = 1.0;
+        public double Confidence { get; set; } = 2.0;
 
         public double MaximumErrors { get; set; } = 0.5;
 
@@ -74,11 +74,7 @@ namespace Slamby.SDK.Net.Models.Services
 
         public int Count { get; set; }
 
-        public class SearchFieldWeight
-        {
-            public string Field { get; set; }
-            public double Value { get; set; }
-        }
+        public LogicalOperatorEnum Operator { get; set; } = LogicalOperatorEnum.OR;
     }
 
     public class ClassifierSettings
