@@ -61,9 +61,8 @@ namespace Slamby.SDK.Net.Models.Services
 
         public List<string> ResponseFieldList { get; set; } = new List<string>();
 
+        //can contains e.g.: ^2 boost
         public List<string> SearchFieldList { get; set; } = new List<string>();
-
-        public List<SearchFieldWeight> SearchFieldWeights { get; set; } = new List<SearchFieldWeight>();
 
         public SearchTypeEnum Type { get; set; }
 
