@@ -8,8 +8,6 @@ namespace Slamby.SDK.Net.Models.Services
 
         public int Count { get; set; }
 
-        public HighlightSettings HighlightSettings { get; set; }
-
         public AutoCompleteSettings AutoCompleteSettings { get; set; }
 
         public SearchSettings SearchSettings { get; set; }
