@@ -9,13 +9,12 @@ namespace Slamby.SDK.Net.Models.Services
         public string Text { get; set; }
 
         [Range(0, Constants.ValidationCommonMaximumNumber)]
-        public int Count { get; set; }
+        public int AutoCompleteCount { get; set; }
 
-        public AutoCompleteSettings AutoCompleteSettings { get; set; }
+        [Range(0, Constants.ValidationCommonMaximumNumber)]
+        public int SearchCount { get; set; }
 
-        public SearchSettings SearchSettings { get; set; }
-
-        public ClassifierSettings ClassifierSettings { get; set; }
-
+        [Range(0, Constants.ValidationCommonMaximumNumber)]
+        public int ClassifierCount { get; set; }
     }
 }
