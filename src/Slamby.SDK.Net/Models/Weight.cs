@@ -1,4 +1,6 @@
-﻿namespace Slamby.SDK.Net.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Slamby.SDK.Net.Models
 {
     /// <summary>
     /// Weight object
@@ -14,7 +16,7 @@
         /// </summary>
         public string Query { get; set; }
 
-
+        [Range(0, Constants.ValidationCommonMaximumNumber)]
         public double Value { get; set; }
     }
 }
