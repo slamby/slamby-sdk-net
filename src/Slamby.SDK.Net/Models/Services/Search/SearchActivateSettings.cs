@@ -17,10 +17,10 @@ namespace Slamby.SDK.Net.Models.Services
 
     public class AutoCompleteSettings {
         [Range(0, Constants.ValidationCommonMaximumNumber)]
-        public double? Confidence { get; set; } = 2.0;
+        public double? Confidence { get; set; }
 
         [Range(0, Constants.ValidationCommonMaximumNumber)]
-        public double? MaximumErrors { get; set; } = 0.5;
+        public double? MaximumErrors { get; set; }
 
         [Range(0, Constants.ValidationCommonMaximumNumber)]
         public int? Count { get; set; }
@@ -31,25 +31,25 @@ namespace Slamby.SDK.Net.Models.Services
     {
         public Filter Filter { get; set; }
 
-        public List<Weight> Weights { get; set; } = new List<Weight>();
+        public List<Weight> Weights { get; set; }
 
-        public List<string> ResponseFieldList { get; set; } = new List<string>();
+        public List<string> ResponseFieldList { get; set; }
 
         //can contains e.g.: ^2 boost
-        public List<string> SearchFieldList { get; set; } = new List<string>();
+        public List<string> SearchFieldList { get; set; }
 
-        public SearchTypeEnum? Type { get; set; } = SearchTypeEnum.Match;
+        public SearchTypeEnum? Type { get; set; }
 
         [Range(0, Constants.ValidationCommonMaximumNumber)]
-        public double? CutOffFrequency { get; set; } = 0.001;
+        public double? CutOffFrequency { get; set; }
 
         [Range(-1, 2)]
-        public int? Fuzziness { get; set; } = -1;
+        public int? Fuzziness { get; set; }
 
         [Range(0, Constants.ValidationCommonMaximumNumber)]
         public int? Count { get; set; }
 
-        public LogicalOperatorEnum? Operator { get; set; } = LogicalOperatorEnum.OR;
+        public LogicalOperatorEnum? Operator { get; set; }
     }
 
     public class ClassifierSettings
@@ -57,6 +57,6 @@ namespace Slamby.SDK.Net.Models.Services
         public string Id { get; set; }
 
         [Range(0, Constants.ValidationCommonMaximumNumber)]
-        public int? Count { get; set; } = 3;
+        public int? Count { get; set; }
     }
 }
