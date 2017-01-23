@@ -9,12 +9,6 @@ namespace Slamby.SDK.Net.Models.Services
 {
     public class SearchActivateSettings
     {
-        /// <summary>
-        /// How many results you want to see in the response. This is a default value setting. The default is 3
-        /// </summary>
-        [Range(0, Constants.ValidationCommonMaximumNumber)]
-        public int Count { get; set; } = 3;
-
         public AutoCompleteSettings AutoCompleteSettings { get; set; }
         public SearchSettings SearchSettings { get; set; }
         public ClassifierSettings ClassifierSettings { get; set; }
