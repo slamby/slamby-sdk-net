@@ -8,13 +8,8 @@ namespace Slamby.SDK.Net.Models.Services
         [Required]
         public string Text { get; set; }
 
-        [Range(0, Constants.ValidationCommonMaximumNumber)]
-        public int AutoCompleteCount { get; set; }
-
-        [Range(0, Constants.ValidationCommonMaximumNumber)]
-        public int SearchCount { get; set; }
-
-        [Range(0, Constants.ValidationCommonMaximumNumber)]
-        public int ClassifierCount { get; set; }
+        public AutoCompleteSettings AutoCompleteSettings { get; set; }
+        public SearchSettings SearchSettings { get; set; }
+        public ClassifierSettings ClassifierSettings { get; set; }
     }
 }
