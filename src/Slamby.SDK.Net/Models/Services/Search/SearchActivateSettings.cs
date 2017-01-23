@@ -54,7 +54,7 @@ namespace Slamby.SDK.Net.Models.Services
 
     public class ClassifierSettings
     {
-        public string? Id { get; set; }
+        public string Id { get; set; }
 
         [Range(0, Constants.ValidationCommonMaximumNumber)]
         public int? Count { get; set; } = 3;
