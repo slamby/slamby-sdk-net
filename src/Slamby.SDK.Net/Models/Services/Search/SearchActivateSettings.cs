@@ -31,7 +31,11 @@ namespace Slamby.SDK.Net.Models.Services
     {
         public Filter Filter { get; set; }
 
+        public bool UseDefaultFilter { get; set; }
+
         public List<Weight> Weights { get; set; }
+
+        public bool UseDefaultWeights { get; set; }
 
         public List<string> ResponseFieldList { get; set; }
 

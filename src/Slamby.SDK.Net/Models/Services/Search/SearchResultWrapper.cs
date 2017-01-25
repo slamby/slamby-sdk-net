@@ -6,7 +6,7 @@ namespace Slamby.SDK.Net.Models.Services
     {
         public List<AutoCompleteResult> AutoCompleteResultList { get; set; }
 
-        public List<ClassifierRecommendationResult> ClassifierResultList { get; set; }
+        public List<SearchClassifierRecommendationResult> ClassifierResultList { get; set; }
 
         public List<SearchResult> SearchResultList { get; set; }
 
@@ -19,7 +19,7 @@ namespace Slamby.SDK.Net.Models.Services
 
         public double Score { get; set; }
 
-        public List<ClassifierRecommendationResult> ClassifierResultList { get; set; }
+        public List<SearchClassifierRecommendationResult> ClassifierResultList { get; set; }
     }
 
     public class SearchResult
