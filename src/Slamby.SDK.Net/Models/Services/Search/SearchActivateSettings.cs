@@ -31,11 +31,11 @@ namespace Slamby.SDK.Net.Models.Services
     {
         public Filter Filter { get; set; }
 
-        public bool UseDefaultFilter { get; set; }
+        public bool? UseDefaultFilter { get; set; }
 
         public List<Weight> Weights { get; set; }
 
-        public bool UseDefaultWeights { get; set; }
+        public bool? UseDefaultWeights { get; set; }
 
         public List<string> ResponseFieldList { get; set; }
 
@@ -54,6 +54,8 @@ namespace Slamby.SDK.Net.Models.Services
         public int? Count { get; set; }
 
         public LogicalOperatorEnum? Operator { get; set; }
+
+        public Order Order { get; set; }
     }
 
     public class ClassifierSettings
