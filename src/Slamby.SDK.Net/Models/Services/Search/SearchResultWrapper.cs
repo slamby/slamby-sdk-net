@@ -10,6 +10,8 @@ namespace Slamby.SDK.Net.Models.Services
 
         public List<SearchResult> SearchResultList { get; set; }
 
+        public int Total { get; set; }
+
 
     }
 
