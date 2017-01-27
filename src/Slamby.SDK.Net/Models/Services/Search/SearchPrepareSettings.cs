@@ -8,6 +8,9 @@ namespace Slamby.SDK.Net.Models.Services
 {
     public class SearchPrepareSettings
     {
+        /// <summary>
+        /// The name of the DataSet in which this service will search
+        /// </summary>
         [Required]
         [RegularExpression(Constants.ValidationCommonRegex)]
         [StringLength(Constants.ValidationCommonMaximumLength, MinimumLength = Constants.ValidationCommonMinimumLength)]
