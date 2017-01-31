@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Slamby.SDK.Net.Models.Services
 {
@@ -24,5 +25,10 @@ namespace Slamby.SDK.Net.Models.Services
         /// If you want to see all the tag object in the response
         /// </summary>
         public bool NeedTagInResult { get; set; }
+
+        /// <summary>
+        /// The recommendation process will be used only tags by these parent(s)
+        /// </summary>
+        public List<string> ParentTagIdList { get; set; } = new List<string>();
     }
 }
