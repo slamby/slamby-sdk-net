@@ -3,6 +3,7 @@
     public enum ServiceTypeEnum
     {
         Classifier,
-        Prc
+        Prc,
+        Search
     }
 }
