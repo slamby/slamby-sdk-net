@@ -10,8 +10,11 @@ namespace Slamby.SDK.Net.Helpers
 
         private string requestId;
 
-        public ApiHttpMessageHandler(bool useGzip)
+        private bool useMessagePublisher;
+
+        public ApiHttpMessageHandler(bool useGzip, bool useMessagePublisher)
         {
+            this.useMessagePublisher = useMessagePublisher;
             InnerHandler = new HttpClientHandler()
             {
                 AutomaticDecompression = useGzip
@@ -23,9 +26,9 @@ namespace Slamby.SDK.Net.Helpers
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, System.Threading.CancellationToken cancellationToken)
         {
-            RawMessagePublisher.Instance.Publish(request.Format(requestId));
+            if (useMessagePublisher) RawMessagePublisher.Instance.Publish(request.Format(requestId));
             var response = await base.SendAsync(request, cancellationToken);
-            RawMessagePublisher.Instance.Publish(response.Format(requestId));
+            if (useMessagePublisher) RawMessagePublisher.Instance.Publish(response.Format(requestId));
 
             return response;
         }

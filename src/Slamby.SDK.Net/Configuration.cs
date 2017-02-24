@@ -32,5 +32,7 @@ namespace Slamby.SDK.Net
         public TimeSpan Timeout { get; set; } = new TimeSpan(0, 5, 0);
 
         public int ParallelLimit { get; set; }
+
+        public bool EnableMessageLogging { get; set; } = false;
     }   
 }
