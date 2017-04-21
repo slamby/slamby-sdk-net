@@ -33,7 +33,7 @@ namespace Slamby.SDK.Net
         internal async Task<ClientResponseWithObject<T>> SendAsync<T>(HttpMethod method, object body, string urlPart, Dictionary<string, string> queryParameters, Dictionary<string, string> headers, bool useGzip = false)
         {
             ClientResponseWithObject<T> clientResponse = null;
-            var messageHandler = new ApiHttpMessageHandler(useGzip);
+            var messageHandler = new ApiHttpMessageHandler(useGzip, _configuration.EnableMessageLogging);
             var jsonSerializerSettings = new JsonSerializerSettings();
 
             jsonSerializerSettings.Converters.Add(new StringEnumConverter());
